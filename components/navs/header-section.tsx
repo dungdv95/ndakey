@@ -107,8 +107,8 @@ function DesktopHeader({
   return (
     <header
       className={cn(
-        "fixed top-[64px] z-50 w-full transition-transform duration-700 ease-in-out",
-        isVisible ? "translate-y-0" : "-translate-y-[calc(100%+45px)]"
+        "fixed top-[65px] z-50 w-full transition-transform duration-700 ease-in-out",
+        isVisible ? "translate-y-0" : "-translate-y-[calc(100%+65px)]"
       )}
     >
       <div className="container mx-auto 2xl:px-[123px] xl:px-[60px]">
