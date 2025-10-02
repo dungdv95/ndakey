@@ -1,6 +1,36 @@
 {
   "header": {
-    "homePage": "Trang chủ",
-    "tab1": "Tab 1"
+    "about": "Giới thiệu",
+    "fields": "Lĩnh vực",
+    "tech": "Công nghệ",
+    "infra": "Hạ tầng",
+    "news": "Tin tức",
+    "integrated": "Đăng ký tích hợp"
+  },
+  "about": {
+    "title": "Làm chủ-Danh tính cá nhân-trong-Kỷ nguyên số",
+    "description": "NDAKey trao quyền cho công dân tự kiểm soát danh tính số, đơn giản hóa việc xác minh để\nthực hiện giao dịch không giấy tờ một cách chủ động – an toàn – minh bạch",
+    "whatNdaKey": {
+      "title": "NDAKey là gì?",
+      "description": "NDAKey là ứng dụng quản lý danh tính số, cho phép lưu giữ và kiểm soát toàn bộ giấy tờ quan trọng dưới dạng\nChứng chỉ số (VC) trên điện thoại. Khi cần, người dùng có thể xuất trình thông tin bằng Bằng chứng số (VP)\nan toàn và tiện lợi."
+    },
+    "video": {
+      "introduce": "Giới thiệu về NDAKey",
+      "descriptionVideo": "Ứng dụng quản lý danh tính số"
+    },
+    "active": {
+      "title": "NDAKey hoạt động như thế nào?",
+      "description": "Ứng dụng được vận hành trên nền tảng blockchain quốc gia NDAChain và định danh phi tập trung\nNDADID, đảm bảo giao dịch số an toàn – minh bạch – không thể giả mạo."
+    }
+  },
+  "field": {
+    "title": "Mọi giấy tờ-Một ứng dụng",
+    "description": "Lưu Chứng chỉ số trên NDAKey – an toàn, toàn quyền kiểm soát.",
+    "finance": "Tài chính",
+    "business": "Kinh doanh",
+    "job": "Việc làm",
+    "publicAd": "Hành chính công",
+    "entertainment": "Giải trí",
+    "travel": "Du lịch"
   }
 }

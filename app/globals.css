@@ -140,3 +140,83 @@ body {
   box-shadow: 0 0px 24px 0px rgba(0, 0, 0, 0.1),
     0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
+
+.header-bg-button {
+  border-radius: 100px;
+  background: linear-gradient(93deg, #7ec6ff 16.45%, #3dabff 105.52%),
+    rgba(0, 124, 255, 0.6);
+
+  background: linear-gradient(
+      93deg,
+      color(display-p3 0.559 0.77 1) 16.45%,
+      color(display-p3 0.3662 0.662 1 / 0) 105.52%
+    ),
+    color(display-p3 0 0.4784 1 / 0.6);
+
+  background-blend-mode: plus-darker, normal;
+
+  box-shadow: 1px 1px 1px 0.5px rgba(255, 255, 255, 0.75) inset,
+    -1px -1px 1px 0.5px rgba(255, 255, 255, 0.75) inset,
+    0 0 1px 1px rgba(255, 255, 255, 0.15) inset, 0 0 1px 1px #999 inset,
+    0 0 16px 0 #f2f2f2 inset, 0 0 2px 0 rgba(0, 0, 0, 0.1),
+    0 1px 8px 0 rgba(0, 0, 0, 0.1);
+
+  box-shadow: 1px 1px 1px 0.5px color(display-p3 1 1 1 / 0.75) inset,
+    -1px -1px 1px 0.5px color(display-p3 1 1 1 / 0.75) inset,
+    0 0 1px 1px color(display-p3 1 1 1 / 0.15) inset,
+    0 0 1px 1px color(display-p3 0.6 0.6 0.6) inset,
+    0 0 16px 0 color(display-p3 0.949 0.949 0.949) inset,
+    0 0 2px 0 color(display-p3 0 0 0 / 0.1),
+    0 1px 8px 0 color(display-p3 0 0 0 / 0.1);
+  backdrop-filter: blur(6px);
+  /* background: linear-gradient(267deg, #7ec6ff 16.45%, #007cff 105.52%);
+
+  box-shadow: 1px 1px 1px 0.5px rgba(255, 255, 255, 0.75) inset,
+    -1px -1px 1px 0.5px rgba(255, 255, 255, 0.75) inset,
+    0 0 1px 1px rgba(255, 255, 255, 0.15) inset, 0 0 1px 1px #999 inset,
+    0 0 16px 0 #f2f2f2 inset, 0 0 2px 0 rgba(0, 0, 0, 0.1),
+    0 1px 8px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px); */
+  /* box-shadow: 1px 1px 1px 0.5px rgba(255, 255, 255, 0.75) inset,
+    -1px -1px 1px 0.5px rgba(255, 255, 255, 0.75) inset,
+    0 0 1px 1px rgba(255, 255, 255, 0.15) inset, 0 0 1px 1px #999 inset,
+    0 0 16px 0 #f2f2f2 inset, 0 0 2px 0 rgba(0, 0, 0, 0.1),
+    0 1px 8px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px); */
+}
+.bg-about {
+  background: linear-gradient(120deg, #f6fcff 26.6%, #def5ff 78.59%);
+}
+.text-about-color {
+  background: linear-gradient(
+    90deg,
+    #00b3db 33.17%,
+    #00b1da 73.47%,
+    #00c9ee 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-tech-video {
+  background: linear-gradient(
+    #ffffff00 1%,
+    rgba(255, 255, 255, 0.7) 35.54%,
+    #fff 88.28%
+  );
+}
+.bg-tech-btn {
+  background: linear-gradient(180deg, #003aff 0%, #00e0f6 100%);
+}
+
+.bg-field-section {
+  background: linear-gradient(120deg, #def5ff 26.6%, #f6fcff 78.59%);
+}
+.text-field-color {
+  background: linear-gradient(90deg, #00b1e3 33.17%, #73e8ff 100%);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

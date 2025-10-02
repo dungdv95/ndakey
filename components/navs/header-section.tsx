@@ -1,53 +1,40 @@
 "use client";
 
 import { getDictionary } from "@/get-dictionary";
-import { cn } from "@/lib/utils";
+import { cn, isEnglish } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/use-mobile";
+import { Icons } from "../icons";
+import { Button } from "../ui/button";
+import { i18n, Locale } from "@/i18n-config";
+import Link from "next/link";
 
 const lisNavs = [
   {
     id: 1,
-    name: "homePage",
-    href: "#about",
+    name: "about",
     idSection: "about",
   },
   {
     id: 2,
     name: "fields",
-    href: "#field",
-    idSection: "field",
+    idSection: "fields",
   },
   {
     id: 3,
-    name: "benefits",
-    href: "#benefit",
-    idSection: "benefit",
+    name: "tech",
+    idSection: "tech",
   },
   {
     id: 4,
-    name: "features",
-    href: "#feature",
-    idSection: "feature",
+    name: "infra",
+    idSection: "infra",
   },
   {
     id: 5,
-    name: "technology",
-    href: "#technology",
-    idSection: "technology",
-  },
-  {
-    id: 6,
-    name: "blog",
-    href: "#inquiry",
-    idSection: "inquiry",
-  },
-  {
-    id: 7,
-    name: "contact",
-    href: "#contact",
-    idSection: "contact",
+    name: "news",
+    idSection: "news",
   },
 ];
 
@@ -120,20 +107,29 @@ function DesktopHeader({
   return (
     <header
       className={cn(
-        "fixed top-[45px] z-50 w-full transition-transform duration-700 ease-in-out",
+        "fixed top-[64px] z-50 w-full transition-transform duration-700 ease-in-out",
         isVisible ? "translate-y-0" : "-translate-y-[calc(100%+45px)]"
       )}
     >
       <div className="container mx-auto 2xl:px-[123px] xl:px-[60px]">
-        <div
-          className={cn(
-            "flex items-center gap-[82px] py-2 max-xl:gap-[50px] max-lg:gap-[10px] bg-white rounded-4xl ",
-            !isScrolledToTopDesktop && "header-shadow"
-          )}
-        >
-          <div className="grow px-4 flex justify-between items-center max-lg:px-5">
-            {headerTitle?.homePage}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Icons.ndaKeyLogo />
           </div>
+          <div className="h-14 px-4 py-1.5 rounded-full bg-[#E2F4FF] flex items-center justify-between gap-6">
+            {lisNavs.map((nav) => (
+              <div key={nav.id} className="cursor-pointer">
+                <span className="text-[#194185] text-base font-medium tracking-[-0.6px]">
+                  {/* {nav?.name} */}
+                  {headerTitle[nav.name as keyof typeof headerTitle]}
+                </span>
+              </div>
+            ))}
+            <LocalSwitch />
+          </div>
+          <Button className="w-[200px] h-14 rounded-full text-white text-lg font-semibold leading-7 bg-linear-to-r from-[#5DA9FF] to-[#8FC4FF] ">
+            {headerTitle?.integrated}
+          </Button>
         </div>
       </div>
     </header>
@@ -516,3 +512,48 @@ function DesktopHeader({
 //     }
 //   }
 // };
+
+function LocalSwitch() {
+  const pathname = usePathname();
+
+  const redirectedPathname = (locale: Locale) => {
+    if (!pathname) return "/";
+    const segments = pathname.split("/");
+    segments[1] = locale;
+    return segments.join("/");
+  };
+
+  return (
+    <div className="bg-[#EFF8FF] h-7 w-[84px] flex gap-1 items-center shadow-[inset_4px_0_4px_0_rgba(0,66,138,0.10),inset_0_2px_4px_0_rgba(0,66,138,0.20)] rounded-full">
+      {i18n.locales.map((locale) => {
+        return (
+          <Link
+            key={locale}
+            href={{ pathname: redirectedPathname(locale) }}
+            className={cn(
+              "cursor-pointer h-full w-10",
+              "flex justify-center items-center",
+              pathname.includes(`/${locale}`) &&
+                locale === "vi" &&
+                "bg-[#00438F] rounded-l-[200px] rounded-r-[36px]",
+              pathname.includes(`/${locale}`) &&
+                locale === "en" &&
+                "bg-[#00438F] rounded-r-[200px] rounded-l-[36px]"
+            )}
+          >
+            <span
+              className={cn(
+                " text-base leading-6",
+                pathname.includes(`/${locale}`)
+                  ? "text-[#FAFAFA]"
+                  : "text-[#194185]"
+              )}
+            >
+              {isEnglish(`/${locale}`) ? "Eng" : "Vie"}
+            </span>
+          </Link>
+        );
+      })}
+    </div>
+  );
+}
