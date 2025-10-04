@@ -35,5 +35,24 @@
   },
   "infra": {
     "title": "Vận hành an toàn và tin cậy trên-Nền tảng quốc gia"
-  }
+  },
+  "tech": {
+    "description": "NDAKey mở ra kỷ nguyên định danh số hiện đại, ứng dụng công nghệ tiên tiến hàng đầu thế giới. Với nền tảng bảo mật cấp quốc gia\nvà tiêu chuẩn quốc tế, NDAKey mang đến sự tin cậy, an toàn và riêng tư tuyệt đối, khẳng định bước tiến chiến lược trong\nchuyển đổi số cho mỗi công dân."
+  },
+  "blogs": {
+    "title": "Blog",
+    "news": "Tin tức",
+    "question": "Câu hỏi thường gặp",
+    "ndaTrace": "NDATrace là gì?",
+    "ndaTraceAns": "NDATrace là Nền tảng quốc gia về Định danh, Xác thực và Truy xuất nguồn gốc sản phẩm, hàng hóa, ứng dụng công nghệ blockchain trên nền tảng sử dụng NDADID (Hệ thống định danh phi tập trung quốc gia) và NDAChain (Nền tảng Chuỗi khối Quốc gia) để đảm bảo tính minh bạch, an toàn và chống giả mạo cho tất cả các bên liên quan.",
+    "ndaTraceUid": "NDATrace UID là gì?",
+    "ndaTraceUidAns": "NDATrace UID là thông tin định danh duy nhất, liên kết với mã định danh phi tập trung (DID) theo chuẩn W3C và được thể hiện dưới dạng mã QR hoặc chip định danh, đáp ứng tiêu chuẩn mã vạch Quốc Tế GS1 Data Link.",
+    "ndaTraceCustom": "Khách hàng sử dụng NDATrace để truy xuất xác thực nguồn gốc hàng hoá như thế nào?",
+    "ndaTraceCustomAns": "Các tổ chức (Bên cấp phát - Issuer) đăng ký tài khoản trên NDATrace Portal để khởi tạo mã định danh (DID) sản phẩm và thực hiện xác thực cho các hoạt động trong chuỗi cung ứng (phát hành VC).\nCác bên tham gia trong chuỗi cung ứng (từ nhà sản xuất, cơ quan kiểm định, đơn vị vận chuyển - phân phối đến người tiêu dùng) có thể dễ dàng kiểm tra thông tin, nguồn gốc và hoạt động xác thực trong vòng đời sản phẩm thông qua NDATrace UID (dưới dạng mã QR hoặc chip định danh) mà không cần đăng ký tài khoản. Ứng dụng còn cho phép người dùng đánh giá, phản hồi và tích điểm sản phẩm sau khi mua hàng.",
+    "ndaTraceObj": "Những đối tượng nào có thể sử dụng NDATrace?",
+    "ndaTraceObjAns": "Tất cả mọi đối tượng trong chuỗi cung ứng đều có thể truy xuất nguồn gốc thông qua NDATrace UID. Tuy nhiên, chỉ có các Bên khởi tạo Chứng chỉ số (Issuer) đã đăng ký tài khoản trên NDATrace Portal mới có thể khởi tạo DID sản phẩm và xác thực hoạt động (phát hành VC).",
+    "ndaTraceWhy": "Tại sao NDATrace tối ưu hơn các giải pháp truy xuất nguồn gốc thông thường?",
+    "ndaTraceWhyAns": "Hoạt động trên nền tảng quốc gia NDAChain và NDADID, NDATrace vượt trội nhờ ứng dụng công nghệ chuỗi khối (blockchain) và định danh phi tập trung (DID) đáp ứng các chuẩn quốc tế, giúp đảm bảo minh bạch và không thể làm giả. Không chỉ truy xuất nguồn gốc, NDATrace còn mang đến trải nghiệm cho người dùng cuối như tích điểm, đánh giá sản phẩm và phản hồi sau mua - tạo vòng đời tương tác số toàn diện so với các giải pháp khác."
+  },
+  "footer": {}
 }

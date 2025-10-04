@@ -220,3 +220,10 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.bg-tech {
+  background: linear-gradient(120deg, #f6fcff 26.6%, #def5ff 78.59%);
+}
+.bg-footer {
+  background: linear-gradient(346deg, #fff 30.53%, #def5ff 81.82%);
+}

@@ -11,6 +11,7 @@ import "../globals.css";
 import Providers from "@/components/providers/query-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import LayoutPage from "@/components/navs/layout-page";
+import LayoutData from "@/components/navs/layout-data";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -94,7 +95,7 @@ export default async function Layout(props: LayoutProps<"/[lang]">) {
           disableTransitionOnChange
         >
           <Providers>
-            <LayoutPage dictionary={dictionary}>{props?.children}</LayoutPage>
+            <LayoutData dictionary={dictionary}>{props?.children}</LayoutData>
           </Providers>
         </ThemeProvider>
         <Toaster richColors position="bottom-center" />
