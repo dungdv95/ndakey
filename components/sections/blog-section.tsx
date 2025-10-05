@@ -23,33 +23,33 @@ import { BlogProps, useStore } from "../navs/store";
 const listQa = [
   {
     id: 1,
-    code: "ndaTrace",
-    title: "ndaTrace",
-    answer: "ndaTraceAns",
+    code: "ndaKey",
+    title: "ndaKey",
+    answer: "ndaKeyAns",
   },
   {
     id: 2,
-    code: "ndaTraceUid",
-    title: "ndaTraceUid",
-    answer: "ndaTraceUidAns",
+    code: "ndaKeyQ1",
+    title: "ndaKeyQ1",
+    answer: "ndaKeyQ1Ans",
   },
   {
     id: 3,
-    code: "custom",
-    title: "ndaTraceCustom",
-    answer: "ndaTraceCustomAns",
+    code: "ndaKeyQ2",
+    title: "ndaKeyQ2",
+    answer: "ndaKeyQ2Ans",
   },
   {
     id: 4,
-    code: "object",
-    title: "ndaTraceObj",
-    answer: "ndaTraceObjAns",
+    code: "ndaKeyQ3",
+    title: "ndaKeyQ3",
+    answer: "ndaKeyQ3Ans",
   },
   {
     id: 5,
-    code: "why",
-    title: "ndaTraceWhy",
-    answer: "ndaTraceWhyAns",
+    code: "ndaKeyQ4",
+    title: "ndaKeyQ4",
+    answer: "ndaKeyQ4Ans",
   },
 ];
 
@@ -152,7 +152,7 @@ function DesktopBlog({
 }) {
   //   console.log("data", data);
   const router = useRouter();
-  const [qaValue, setQaValue] = useState("ndaTrace");
+  const [qaValue, setQaValue] = useState("ndaKey");
   const pathName = usePathname();
 
   // console.log("data", data);
@@ -160,7 +160,7 @@ function DesktopBlog({
   return (
     <div className="pt-[100px] container mx-auto 2xl:px-[123px] xl:px-[60px]">
       <div className="flex flex-col">
-        <section id="inquiry" className="flex flex-col gap-10">
+        <section id="news" className="flex flex-col gap-10">
           <motion.span
             viewport={{ once: true }}
             initial={{ opacity: 0, y: 40 }}
@@ -190,10 +190,7 @@ function DesktopBlog({
                 // }}
               >
                 <img
-                  src={
-                    data[0]?.thumbnail ||
-                    "https://s3-sgn10.fptcloud.com/cdn/ndatrace/default-img.jpg"
-                  }
+                  src={data[0]?.thumbnail || "/images/default-img.jpg"}
                   className="object-cover h-full w-full rounded-[16px]"
                   alt="thumbnail"
                 />
@@ -281,10 +278,7 @@ function DesktopBlog({
                     // }}
                   >
                     <img
-                      src={
-                        item.thumbnail ||
-                        "https://s3-sgn10.fptcloud.com/cdn/ndatrace/default-img.jpg"
-                      }
+                      src={item.thumbnail || "/images/default-img.jpg"}
                       className="object-cover h-full w-full  rounded-[10px]"
                       alt=""
                     />
@@ -446,7 +440,7 @@ function MoblieBlog({
   // console.log("data", data);
   const [qaValue, setQaValue] = useState("ndaTrace");
   return (
-    <section id="inquiry" className="px-4 pt-[50px] flex flex-col gap-[62px]">
+    <section id="news" className="px-4 pt-[50px] flex flex-col gap-[62px]">
       <div className="flex flex-col gap-6 items-center">
         <motion.span
           viewport={{ once: true }}
@@ -474,10 +468,7 @@ function MoblieBlog({
             // }}
           >
             <img
-              src={
-                data[0]?.thumbnail ||
-                "https://s3-sgn10.fptcloud.com/cdn/ndatrace/default-img.jpg"
-              }
+              src={data[0]?.thumbnail || "/images/default-img.jpg"}
               className="object-cover h-full w-full rounded-[16px]"
               alt=""
             />
@@ -563,10 +554,7 @@ function MoblieBlog({
                 // }}
               >
                 <img
-                  src={
-                    item.thumbnail ||
-                    "https://s3-sgn10.fptcloud.com/cdn/ndatrace/default-img.jpg"
-                  }
+                  src={item.thumbnail || "/images/default-img.jpg"}
                   className="object-cover h-full w-full  rounded-[10px]"
                   alt=""
                 />

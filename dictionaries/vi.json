@@ -1,7 +1,7 @@
 {
   "header": {
     "about": "Giới thiệu",
-    "fields": "Lĩnh vực",
+    "usecase": "Lĩnh vực",
     "tech": "Công nghệ",
     "infra": "Hạ tầng",
     "news": "Tin tức",
@@ -20,7 +20,25 @@
     },
     "active": {
       "title": "NDAKey hoạt động như thế nào?",
-      "description": "Ứng dụng được vận hành trên nền tảng blockchain quốc gia NDAChain và định danh phi tập trung\nNDADID, đảm bảo giao dịch số an toàn – minh bạch – không thể giả mạo."
+      "description": "Ứng dụng được vận hành trên nền tảng blockchain quốc gia NDAChain và định danh phi tập trung\nNDADID, đảm bảo giao dịch số an toàn – minh bạch – không thể giả mạo.",
+      "diagramT1": "Bên sở hữu\nBằng chứng số",
+      "diagramT2": "Phát hành\nthông tin xác thực",
+      "diagramT3": "Xác minh thông tin",
+      "diagramT4": "Bên khởi tạo\nChứng chỉ số",
+      "diagramT5": "Bên xác thực\nBằng chứng số",
+      "diagramT6": "Khởi tạo\nChứng chỉ số",
+      "diagramT7": "Truy xuất\nChứng chỉ số",
+      "diagramT8": "Tin tưởng",
+      "diagramT9": "Không cần tích hợp",
+      "diagramHoverT1": "1. Yêu cầu cấp phát Chứng chỉ số (VC).",
+      "diagramHoverT2": "3. Phát hành VC đã ký và lưu trữ tại thiết bị của người dùng thông qua ứng dụng NDAKey.",
+      "diagramHoverT3": "4. Lựa chọn dữ liệu và chia sẻ Bằng chứng số (VP) cho bên cần xác minh thông tin qua NDAKey.",
+      "diagramHoverT4": "2. Tạo DID và khóa công khai trên NDAChain, sau đó ký số lên VC.",
+      "diagramHoverT5": "5. Truy xuất khóa công khai trên NDAChain để kiểm tra và xác thực dữ liệu."
+    },
+    "btn": {
+      "apple": "Tải từ",
+      "chPlay": "Tải từ"
     }
   },
   "field": {
@@ -34,25 +52,78 @@
     "travel": "Du lịch"
   },
   "infra": {
-    "title": "Vận hành an toàn và tin cậy trên-Nền tảng quốc gia"
+    "title": "Vận hành an toàn và tin cậy trên-Nền tảng quốc gia",
+    "text1": "Ứng dụng quản lý\ndanh tính số",
+    "text2": "Nền tảng Định danh phi tập trung\nquốc gia",
+    "text3": "Nền tảng Blockchain\nquốc gia"
   },
   "tech": {
-    "description": "NDAKey mở ra kỷ nguyên định danh số hiện đại, ứng dụng công nghệ tiên tiến hàng đầu thế giới. Với nền tảng bảo mật cấp quốc gia\nvà tiêu chuẩn quốc tế, NDAKey mang đến sự tin cậy, an toàn và riêng tư tuyệt đối, khẳng định bước tiến chiến lược trong\nchuyển đổi số cho mỗi công dân."
+    "description": "NDAKey mở ra kỷ nguyên định danh số hiện đại, ứng dụng công nghệ tiên tiến hàng đầu thế giới. Với nền tảng bảo mật cấp quốc gia\nvà tiêu chuẩn quốc tế, NDAKey mang đến sự tin cậy, an toàn và riêng tư tuyệt đối, khẳng định bước tiến chiến lược trong\nchuyển đổi số cho mỗi công dân.",
+    "blockOne": {
+      "title": "Bảo mật\ncấp quốc gia",
+      "description": "Tuân thủ chuẩn eIDAS 2.0 (EU), RealDID (Trung Quốc) và các tiêu chuẩn xác thực quốc tế."
+    },
+    "blockSecond": {
+      "title": "Xác thực\nsinh trắc học",
+      "description": "Xác thực danh tính tự chủ tuân thủ tiêu chuẩn Passkey / Fido."
+    },
+    "blockThird": {
+      "title": "Giao thức truyền\nnhận dữ liệu\nDIDComm",
+      "description": "Giao thức giao tiếp bảo mật dựa trên DID, cho phép trao đổi dữ liệu mã hóa đầu cuối, xác thực và có thể kiểm chứng."
+    },
+    "blockFour": {
+      "title": "Bằng chứng\nkhông tiết lộ\nthông tin",
+      "description": "Xác minh tính chính xác của một thông tin mà không cần tiết lộ dữ liệu gốc."
+    },
+    "blockFive": {
+      "title": "Xác thực an toàn, Mở khoá niềm tin số",
+      "description": "NDAKey cung cấp giải pháp xác thực danh tính số an toàn, hỗ trợ đa ngành nghề. Tích hợp dễ dàng qua SDKs để tiết kiệm chi phí, bảo vệ doanh nghiệp và gia tăng niềm tin khách hàng.",
+      "btnText": "Đăng ký tích hợp"
+    }
   },
   "blogs": {
     "title": "Blog",
-    "news": "Tin tức",
+    "news": "Tin tức mới nhất",
     "question": "Câu hỏi thường gặp",
-    "ndaTrace": "NDATrace là gì?",
-    "ndaTraceAns": "NDATrace là Nền tảng quốc gia về Định danh, Xác thực và Truy xuất nguồn gốc sản phẩm, hàng hóa, ứng dụng công nghệ blockchain trên nền tảng sử dụng NDADID (Hệ thống định danh phi tập trung quốc gia) và NDAChain (Nền tảng Chuỗi khối Quốc gia) để đảm bảo tính minh bạch, an toàn và chống giả mạo cho tất cả các bên liên quan.",
-    "ndaTraceUid": "NDATrace UID là gì?",
-    "ndaTraceUidAns": "NDATrace UID là thông tin định danh duy nhất, liên kết với mã định danh phi tập trung (DID) theo chuẩn W3C và được thể hiện dưới dạng mã QR hoặc chip định danh, đáp ứng tiêu chuẩn mã vạch Quốc Tế GS1 Data Link.",
-    "ndaTraceCustom": "Khách hàng sử dụng NDATrace để truy xuất xác thực nguồn gốc hàng hoá như thế nào?",
-    "ndaTraceCustomAns": "Các tổ chức (Bên cấp phát - Issuer) đăng ký tài khoản trên NDATrace Portal để khởi tạo mã định danh (DID) sản phẩm và thực hiện xác thực cho các hoạt động trong chuỗi cung ứng (phát hành VC).\nCác bên tham gia trong chuỗi cung ứng (từ nhà sản xuất, cơ quan kiểm định, đơn vị vận chuyển - phân phối đến người tiêu dùng) có thể dễ dàng kiểm tra thông tin, nguồn gốc và hoạt động xác thực trong vòng đời sản phẩm thông qua NDATrace UID (dưới dạng mã QR hoặc chip định danh) mà không cần đăng ký tài khoản. Ứng dụng còn cho phép người dùng đánh giá, phản hồi và tích điểm sản phẩm sau khi mua hàng.",
-    "ndaTraceObj": "Những đối tượng nào có thể sử dụng NDATrace?",
-    "ndaTraceObjAns": "Tất cả mọi đối tượng trong chuỗi cung ứng đều có thể truy xuất nguồn gốc thông qua NDATrace UID. Tuy nhiên, chỉ có các Bên khởi tạo Chứng chỉ số (Issuer) đã đăng ký tài khoản trên NDATrace Portal mới có thể khởi tạo DID sản phẩm và xác thực hoạt động (phát hành VC).",
-    "ndaTraceWhy": "Tại sao NDATrace tối ưu hơn các giải pháp truy xuất nguồn gốc thông thường?",
-    "ndaTraceWhyAns": "Hoạt động trên nền tảng quốc gia NDAChain và NDADID, NDATrace vượt trội nhờ ứng dụng công nghệ chuỗi khối (blockchain) và định danh phi tập trung (DID) đáp ứng các chuẩn quốc tế, giúp đảm bảo minh bạch và không thể làm giả. Không chỉ truy xuất nguồn gốc, NDATrace còn mang đến trải nghiệm cho người dùng cuối như tích điểm, đánh giá sản phẩm và phản hồi sau mua - tạo vòng đời tương tác số toàn diện so với các giải pháp khác."
+    "ndaKey": "NDAKey là gì?",
+    "ndaKeyAns": "NDAKey là Ứng dụng quản lý danh tính số, cho phép cá nhân, tổ chức và vật thể sở hữu và quản lý thông tin cá nhân dưới dạng Chứng chỉ số (Verifiable Credential – VC), lưu trữ và chia sẻ Bằng chứng số (Verifiable Presentation) một cách chủ động, bảo mật và có kiểm soát trên điện thoại (iOS, Android, Zalo Mini App).",
+    "ndaKeyQ1": "Ai có thể sử dụng NDAKey?",
+    "ndaKeyQ1Ans": "NDAKey phù hợp với mọi cá nhân, tổ chức và doanh nghiệp tại Việt Nam có nhu cầu xác thực danh tính số an toàn và minh bạch. Người dân (Holder) có thể dùng NDAKey để đăng nhập, ký số và chủ động chia sẻ dữ liệu cá nhân. Trong khi đó, các tổ chức (Issuer/Verifier) như cơ quan hành chính, trường học, bệnh viện, ngân hàng… có thể dễ dàng tích hợp NDAKey qua SDK hoặc API để phát hành chứng chỉ số (VC) hoặc xác minh thông tin (VP) mà không cần xây dựng hệ thống phức tạp.",
+    "ndaKeyQ2": "Người dân có thể sử dụng NDAKey để làm gì?",
+    "ndaKeyQ2Ans": "NDAKey cho phép số hóa giấy tờ định danh, bằng cấp và hồ sơ cá nhân thành chứng chỉ số (VC) an toàn. Khi cần, người dùng có thể chọn lọc VC phù hợp để tạo bằng chứng số (VP) xuất trình qua QR hoặc NFC. Giải pháp này bảo đảm xác thực hợp lệ, bảo vệ quyền riêng tư và đơn giản hóa giao dịch trong hành chính, tài chính, y tế, giáo dục.",
+    "ndaKeyQ3": "NDAKey có an toàn không?",
+    "ndaKeyQ3Ans": "NDAKey được thiết kế với lớp bảo mật đa tầng, từ Mã hóa dữ liệu đầu cuối (end-to-end encryption), Bằng chứng không tri thức (Zero-Knowledge Proof – ZKP) cho đến Xác thực sinh trắc học bằng Face ID. Người dùng hoàn toàn chủ động trong việc chia sẻ dữ liệu, đảm bảo thông tin cá nhân không bị rò rỉ hay khai thác trái phép.",
+    "ndaKeyQ4": "NDAKey có tương thích và tuân thủ tiêu chuẩn quốc tế không?",
+    "ndaKeyQ4Ans": "Có. NDAKey được phát triển theo các chuẩn quốc tế như DID (W3C), Verifiable Credential, JSON-LD, eIDAS 2.0 (EU) và tham chiếu mô hình RealDID (Trung Quốc). Nhờ đó, dữ liệu có thể xác minh xuyên biên giới và hỗ trợ liên kết quốc tế.\nNDAKey áp dụng mô hình định danh phi tập trung (DID), giúp người dùng toàn quyền kiểm soát danh tính số, chia sẻ dữ liệu một cách có chọn lọc, hạn chế rủi ro bị khai thác. Hệ thống còn tích hợp xác thực sinh trắc học (Face ID) để nâng cao bảo mật và nhận diện chính xác người dùng thực."
   },
-  "footer": {}
+  "footer": {
+    "leftText": {
+      "text1": "Trao quyền dữ liệu cho Công dân",
+      "text2": "Kiến tạo Niềm tin số",
+      "description1": "Công dân có toàn quyền kiểm soát và chia sẻ dữ liệu an toàn, minh bạch; đồng thời kiến tạo nền tảng tin cậy cho Chính phủ số, Kinh tế số và Xã hội số.",
+      "description2": "Ứng dụng hiện có mặt trên nền tảng iOS và Android."
+    },
+    "navs": {
+      "about": "Giới thiệu",
+      "usecase": "Lĩnh vực",
+      "tech": "Công nghệ",
+      "infra": "Hạ tầng",
+      "news": "Tin tức"
+    },
+    "contact": {
+      "title": "Liên hệ",
+      "addrName": "Địa chỉ",
+      "addr": "37 Trần Bình Trọng, Phường Cửa Nam, Hà Nội"
+    },
+    "product": {
+      "title": "Sản phẩm",
+      "ndaChain": "Nền tảng blockchain quốc gia",
+      "ndaDid": "Nền tảng định danh phi tập trung quốc gia",
+      "ndaTrace": "Nền tảng quốc gia về định danh, xác thực và truy xuất nguồn gốc hàng hoá"
+    },
+    "btn": {
+      "apple": "Tải từ",
+      "chPlay": "Tải từ"
+    }
+  }
 }

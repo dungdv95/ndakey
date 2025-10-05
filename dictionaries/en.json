@@ -1,58 +1,129 @@
 {
   "header": {
     "about": "Overview",
-    "fields": "Industries",
+    "usecase": "Use cases",
     "tech": "Technology",
     "infra": "Infrastructure",
     "news": "News",
-    "integrated": "Get Started"
+    "integrated": "Request Integration"
   },
   "about": {
-    "title": "Làm chủ-Danh tính cá nhân-trong-Kỷ nguyên số",
-    "description": "NDAKey trao quyền cho công dân tự kiểm soát danh tính số, đơn giản hóa việc xác minh để\nthực hiện giao dịch không giấy tờ một cách chủ động – an toàn – minh bạch",
+    "title": "Own your-Personal Identity-in the-Digital Era",
+    "description": "NDAKey empowers citizens to take full control of their digital identity, simplifying verification\nfor paperless transactions with proactive – secure – transparent experiences.",
     "whatNdaKey": {
-      "title": "NDAKey là gì?",
-      "description": "NDAKey là ứng dụng quản lý danh tính số, cho phép lưu giữ và kiểm soát toàn bộ giấy tờ quan trọng dưới dạng\nChứng chỉ số (VC) trên điện thoại. Khi cần, người dùng có thể xuất trình thông tin bằng Bằng chứng số (VP)\nan toàn và tiện lợi."
+      "title": "What’s NDAKey?",
+      "description": "NDAKey is Digital iIentity Application that allows individuals, organizations, and even objects to store and manage\ntheir essential documents as Verifiable Credentials (VCs) directly on mobile devices. Whenever needed, users can\npresent their information in the form of a Verifiable Presentation (VP) safely and conveniently."
     },
     "video": {
-      "introduce": "Giới thiệu về NDAKey",
-      "descriptionVideo": "Ứng dụng quản lý danh tính số"
+      "introduce": "About NDAKey",
+      "descriptionVideo": "Digital Identity Application"
     },
     "active": {
-      "title": "NDAKey hoạt động như thế nào?",
-      "description": "Ứng dụng được vận hành trên nền tảng blockchain quốc gia NDAChain và định danh phi tập trung\nNDADID, đảm bảo giao dịch số an toàn – minh bạch – không thể giả mạo."
+      "title": "How does NDAKey work?",
+      "description": "NDAKey operates on Vietnam’s National Blockchain Platform (NDAChain) and Vietnam’s National\nDecentralized Identity Platform (NDADID), ensuring that digital transactions are secure, transparent,\nand tamper-proof.",
+      "diagramT1": "Holder",
+      "diagramT2": "Issues\nVerifiable credential",
+      "diagramT3": "Share\nVerifiable presentation",
+      "diagramT4": "Issuer",
+      "diagramT5": "Verifier",
+      "diagramT6": "Create\nVerifiable Credential",
+      "diagramT7": "Trace\nVerifiable Presentation",
+      "diagramT8": "Trust",
+      "diagramT9": "No integration needed",
+      "diagramHoverT1": "1. Yêu cầu cấp phát Chứng chỉ số (VC).",
+      "diagramHoverT2": "3. Phát hành VC đã ký và lưu trữ tại thiết bị của người dùng thông qua ứng dụng NDAKey.",
+      "diagramHoverT3": "4. Lựa chọn dữ liệu và chia sẻ Bằng chứng số (VP) cho bên cần xác minh thông tin qua NDAKey.",
+      "diagramHoverT4": "2. Tạo DID và khóa công khai trên NDAChain, sau đó ký số lên VC.",
+      "diagramHoverT5": "5. Truy xuất khóa công khai trên NDAChain để kiểm tra và xác thực dữ liệu."
+    },
+    "btn": {
+      "apple": "Download on the",
+      "chPlay": "Get it on"
     }
   },
   "field": {
-    "title": "Mọi giấy tờ-Một ứng dụng",
+    "title": "All Documents-One Application",
     "description": "Lưu Chứng chỉ số trên NDAKey – an toàn, toàn quyền kiểm soát.",
-    "finance": "Tài chính",
-    "business": "Kinh doanh",
-    "job": "Việc làm",
-    "publicAd": "Hành chính công",
-    "entertainment": "Giải trí",
-    "travel": "Du lịch"
+    "finance": "Finance",
+    "business": "Business ",
+    "job": "Employment",
+    "publicAd": "Public Administration",
+    "entertainment": "Entertainment",
+    "travel": "Tourism"
   },
   "infra": {
-    "title": "Vận hành an toàn và tin cậy trên-Nền tảng quốc gia"
+    "title": "Secure and Reliable Operation-on Vietnam's National Platform",
+    "text1": "Decentralized\nIdentity Application",
+    "text2": "Vietnam's National Decentralized\nIdentity Platform",
+    "text3": "Vietnam's National\nBlockchain Platform"
   },
   "tech": {
-    "description": "NDAKey mở ra kỷ nguyên định danh số hiện đại, ứng dụng công nghệ tiên tiến hàng đầu thế giới. Với nền tảng bảo mật cấp quốc gia\nvà tiêu chuẩn quốc tế, NDAKey mang đến sự tin cậy, an toàn và riêng tư tuyệt đối, khẳng định bước tiến chiến lược trong\nchuyển đổi số cho mỗi công dân."
+    "description": "NDAKey ushers in a new era of digital identity, applying world-class technologies. With national-grade security and compliance\nwith international standards, NDAKey ensures trust, safety, and absolute privacy - affirming a strategic step forward in Vietnam’s\ndigital transformation for every citizen.",
+    "blockOne": {
+      "title": "National-Level\nSecurity",
+      "description": "Compliance eIDAS 2.0 (EU), RealDID (China), and global verification standards."
+    },
+    "blockSecond": {
+      "title": "Biometric\nAuthentication",
+      "description": "Self-sovereign identity authentication compatible with Passkey / FIDO standards."
+    },
+    "blockThird": {
+      "title": "DIDComm Data\nExchange Protocol",
+      "description": "Secure communication via DIDComm, enabling end-to-end encrypted, verifiable data exchange."
+    },
+    "blockFour": {
+      "title": "Zero-Knowledge\nProof (ZKP)",
+      "description": "Verification of information accuracy without disclosing original data (ZKP)."
+    },
+    "blockFive": {
+      "title": "Secure Authentication, Unlocking Digital Trust",
+      "description": "NDAKey delivers secure digital identity authentication solutions, supporting multiple industries. With easy SDK integration, organizations can reduce costs, protect businesses, and enhance customer trust.",
+      "btnText": "Get Started"
+    }
   },
   "blogs": {
     "title": "Blog",
-    "news": "Tin tức",
-    "question": "Câu hỏi thường gặp",
-    "ndaTrace": "NDATrace là gì?",
-    "ndaTraceAns": "NDATrace là Nền tảng quốc gia về Định danh, Xác thực và Truy xuất nguồn gốc sản phẩm, hàng hóa, ứng dụng công nghệ blockchain trên nền tảng sử dụng NDADID (Hệ thống định danh phi tập trung quốc gia) và NDAChain (Nền tảng Chuỗi khối Quốc gia) để đảm bảo tính minh bạch, an toàn và chống giả mạo cho tất cả các bên liên quan.",
-    "ndaTraceUid": "NDATrace UID là gì?",
-    "ndaTraceUidAns": "NDATrace UID là thông tin định danh duy nhất, liên kết với mã định danh phi tập trung (DID) theo chuẩn W3C và được thể hiện dưới dạng mã QR hoặc chip định danh, đáp ứng tiêu chuẩn mã vạch Quốc Tế GS1 Data Link.",
-    "ndaTraceCustom": "Khách hàng sử dụng NDATrace để truy xuất xác thực nguồn gốc hàng hoá như thế nào?",
-    "ndaTraceCustomAns": "Các tổ chức (Bên cấp phát - Issuer) đăng ký tài khoản trên NDATrace Portal để khởi tạo mã định danh (DID) sản phẩm và thực hiện xác thực cho các hoạt động trong chuỗi cung ứng (phát hành VC).\nCác bên tham gia trong chuỗi cung ứng (từ nhà sản xuất, cơ quan kiểm định, đơn vị vận chuyển - phân phối đến người tiêu dùng) có thể dễ dàng kiểm tra thông tin, nguồn gốc và hoạt động xác thực trong vòng đời sản phẩm thông qua NDATrace UID (dưới dạng mã QR hoặc chip định danh) mà không cần đăng ký tài khoản. Ứng dụng còn cho phép người dùng đánh giá, phản hồi và tích điểm sản phẩm sau khi mua hàng.",
-    "ndaTraceObj": "Những đối tượng nào có thể sử dụng NDATrace?",
-    "ndaTraceObjAns": "Tất cả mọi đối tượng trong chuỗi cung ứng đều có thể truy xuất nguồn gốc thông qua NDATrace UID. Tuy nhiên, chỉ có các Bên khởi tạo Chứng chỉ số (Issuer) đã đăng ký tài khoản trên NDATrace Portal mới có thể khởi tạo DID sản phẩm và xác thực hoạt động (phát hành VC).",
-    "ndaTraceWhy": "Tại sao NDATrace tối ưu hơn các giải pháp truy xuất nguồn gốc thông thường?",
-    "ndaTraceWhyAns": "Hoạt động trên nền tảng quốc gia NDAChain và NDADID, NDATrace vượt trội nhờ ứng dụng công nghệ chuỗi khối (blockchain) và định danh phi tập trung (DID) đáp ứng các chuẩn quốc tế, giúp đảm bảo minh bạch và không thể làm giả. Không chỉ truy xuất nguồn gốc, NDATrace còn mang đến trải nghiệm cho người dùng cuối như tích điểm, đánh giá sản phẩm và phản hồi sau mua - tạo vòng đời tương tác số toàn diện so với các giải pháp khác."
+    "news": "News & Updates",
+    "question": "Frequently Asked Questions",
+    "ndaKey": "What is NDAKey?",
+    "ndaKeyAns": "NDAKey is Digital Identity Application that enables individuals, organizations, and even objects to own and manage their personal data as Verifiable Credentials (VCs). Users can securely store and selectively share Verifiable Presentations (VPs) on mobile (iOS, Android, Zalo MiniApp).",
+    "ndaKeyQ1": "Who can use NDAKey?",
+    "ndaKeyQ1Ans": "NDAKey is suitable for all individuals, organizations, and businesses in Vietnam that require secure and transparent digital identity verification. Citizens (Holders) can use NDAKey to log in, e-sign, and selectively share personal data. Organizations (Issuers/Verifiers) - such as government agencies, schools, hospitals, and banks - can easily integrate NDAKey via SDK or API to issue VCs or verify VPs without building complex systems.",
+    "ndaKeyQ2": "What can citizens do with NDAKey?",
+    "ndaKeyQ2Ans": "NDAKey allows citizens to digitize identification documents, degrees, and personal records into secure VCs. When needed, users can generate selective VPs and present them via QR or NFC. This solution ensures valid authentication, protects privacy, and simplifies processes across administration, finance, healthcare, and education.",
+    "ndaKeyQ3": "Is NDAKey secure?",
+    "ndaKeyQ3Ans": "Yes. NDAKey is designed with multi-layered security, including end-to-end encryption, Zero-Knowledge Proofs (ZKP), and biometric authentication (Face ID). Users remain fully in control of their data sharing, ensuring that personal information is not leaked or misused.",
+    "ndaKeyQ4": "Does NDAKey comply with international standards?",
+    "ndaKeyQ4Ans": "Absolutely. NDAKey has been developed in accordance with global standards such as DID (W3C), Verifiable Credential, JSON-LD, eIDAS 2.0 (EU), and aligned with RealDID (China). This enables cross-border verification and international interoperability. NDAKey applies a decentralized identity (DID) model, granting users full control over their digital identity, allowing selective data sharing, and minimizing risks of exploitation. Biometric authentication (Face ID) further enhances security and ensures accurate user recognition."
   },
-  "footer": {}
+  "footer": {
+    "leftText": {
+      "text1": "Empowering Citizens with Data",
+      "text2": "Building Digital Trust",
+      "description1": "Citizens have full control to manage and share their data securely and transparently, while contributing to building a trusted foundation for Digital Government, Digital Economy and Digital Society.",
+      "description2": "Available on iOS and Android."
+    },
+    "navs": {
+      "about": "Overview",
+      "usecase": "Use cases",
+      "tech": "Technology",
+      "infra": "Infrastructure",
+      "news": "News"
+    },
+    "contact": {
+      "title": "Contact us",
+      "addrName": "Address",
+      "addr": "37 Tran Binh Trong Street, Nguyen Du Ward, Hai Ba Trung District, Ha Noi"
+    },
+    "product": {
+      "title": "Products",
+      "ndaChain": "Vietnam's National Blockchain Platform",
+      "ndaDid": "Vietnam's National Decentralized Identity Platform",
+      "ndaTrace": "Vietnam's National Platform for Product Identification, Verification and Traceability"
+    },
+    "btn": {
+      "apple": "Download on the",
+      "chPlay": "Get it on"
+    }
+  }
 }

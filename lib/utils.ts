@@ -52,9 +52,16 @@ export const getNamePostByLang = (
   }
 };
 
-// export const isEnglish = (pathName: string) => {
-//   if (pathName.includes("/en")) {
-//     return true;
-//   }
-//   return false;
-// };
+export const inEnglish = (pathName: string) => {
+  if (pathName.includes("/en")) {
+    return true;
+  }
+  return false;
+};
+
+export const pathLanguage = (pathName: string) => {
+  if (pathName.includes("/en")) {
+    return "eng";
+  }
+  return "vn";
+};

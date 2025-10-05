@@ -9,7 +9,7 @@ export default function FooterSection({
   footerLang: Awaited<ReturnType<typeof getDictionary>>["footer"];
 }) {
   return (
-    <div className="mt-[50px] pt-[60px] bg-footer">
+    <section id="footer" className="mt-[50px] pt-[60px] bg-footer">
       <div className="container mx-auto 2xl:px-[123px] xl:px-[60px] max-xl:mt-[54px]">
         <div className="flex flex-col gap-14">
           <div className="flex gap-[140px]">
@@ -18,19 +18,19 @@ export default function FooterSection({
             </div>
             <div className="w-full mt-1 flex justify-between gap-4">
               <span className="text-[#194185] text-base font-medium tracking-[-0.6px]">
-                Giới thiệu
+                {footerLang.navs.about}
               </span>
               <span className="text-[#194185] text-base font-medium tracking-[-0.6px]">
-                Lĩnh vực
+                {footerLang.navs.usecase}
               </span>
               <span className="text-[#194185] text-base font-medium tracking-[-0.6px]">
-                Công nghệ
+                {footerLang.navs.tech}
               </span>
               <span className="text-[#194185] text-base font-medium tracking-[-0.6px]">
-                Hạ tầng
+                {footerLang.navs.infra}
               </span>
               <span className="text-[#194185] text-base font-medium tracking-[-0.6px]">
-                Tin tức
+                {footerLang.navs.news}
               </span>
             </div>
           </div>
@@ -38,19 +38,17 @@ export default function FooterSection({
             <div className="w-[70%] flex flex-col gap-4">
               <div className="flex flex-col gap-1">
                 <span className="text-[#194185] text-2xl leading-8 font-semibold">
-                  Trao quyền dữ liệu cho Công dân
+                  {footerLang.leftText.text1}
                 </span>
                 <span className="text-[#194185] text-2xl leading-8 font-semibold">
-                  Kiến tạo Niềm tin số
+                  {footerLang.leftText.text2}
                 </span>
               </div>
               <span className="text-[#194185] text-lg leading-7">
-                Công dân có toàn quyền kiểm soát và chia sẻ dữ liệu an toàn,
-                minh bạch; đồng thời kiến tạo nền tảng tin cậy cho Chính phủ số,
-                Kinh tế số và Xã hội số.
+                {footerLang.leftText.description1}
               </span>
               <span className="text-[#194185] text-lg leading-7">
-                Ứng dụng hiện có mặt trên nền tảng iOS và Android.
+                {footerLang.leftText.description2}
               </span>
               <div className="flex gap-4 items-center">
                 <Button className="h-12 w-[180px] rounded-[8px] justify-start py-1.5">
@@ -60,7 +58,7 @@ export default function FooterSection({
                     </div>
                     <div className="flex flex-col items-start">
                       <span className="text-white text-[10px] font-medium">
-                        Tải từ
+                        {footerLang.btn.apple}
                       </span>
                       <span className="text-[21px] font-medium tracking-[-1.502px] leading-5">
                         App Store
@@ -75,10 +73,10 @@ export default function FooterSection({
                     </div>
                     <div className="flex flex-col items-start">
                       <span className="text-white text-[10px] font-medium">
-                        Tải từ
+                        {footerLang.btn.chPlay}
                       </span>
                       <span className="text-[21px] font-medium tracking-[-1.502px] leading-5">
-                        App Store
+                        Google Play
                       </span>
                     </div>
                   </div>
@@ -88,7 +86,7 @@ export default function FooterSection({
             <div className="w-full flex justify-between gap-8">
               <div className="w-1/2 flex flex-col gap-6">
                 <span className="text-[#194185] text-2xl font-semibold leading-8">
-                  Liên hệ
+                  {footerLang.contact.title}
                 </span>
                 <div className="mt-1.5 flex flex-col">
                   <span className="text-[#194185] text-base font-semibold leading-6">
@@ -100,23 +98,23 @@ export default function FooterSection({
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[#194185] text-base font-semibold leading-6">
-                    Địa chỉ
+                    {footerLang.contact.addrName}
                   </span>
                   <span className="text-[#194185] text-base leading-6">
-                    37 Trần Bình Trọng, Phường Cửa Nam, Hà Nội
+                    {footerLang.contact.addr}
                   </span>
                 </div>
               </div>
               <div className="w-1/2 flex flex-col gap-6">
                 <span className="text-[#194185] text-2xl font-semibold leading-8">
-                  Sản phẩm
+                  {footerLang.product.title}
                 </span>
                 <div className="mt-1.5 flex flex-col">
                   <span className="text-[#194185] text-base font-semibold leading-6">
                     NDAChain
                   </span>
                   <span className="text-[#194185] text-base leading-6">
-                    Nền tảng Blockchain quốc gia
+                    {footerLang.product.ndaChain}
                   </span>
                 </div>
                 <div className="flex flex-col">
@@ -124,7 +122,7 @@ export default function FooterSection({
                     NDADID
                   </span>
                   <span className="text-[#194185] text-base leading-6">
-                    Nền tảng định danh phi tập trung quốc gia
+                    {footerLang.product.ndaDid}
                   </span>
                 </div>
                 <div className="flex flex-col">
@@ -132,8 +130,7 @@ export default function FooterSection({
                     NDATrace
                   </span>
                   <span className="text-[#194185] text-base leading-6">
-                    Nền tảng quốc gia về định danh, xác thực và truy xuất nguồn
-                    gốc hàng hoá
+                    {footerLang.product.ndaTrace}
                   </span>
                 </div>
               </div>
@@ -147,6 +144,6 @@ export default function FooterSection({
           © 2025 Copyright by NDAKey
         </span>
       </div>
-    </div>
+    </section>
   );
 }

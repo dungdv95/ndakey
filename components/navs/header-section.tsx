@@ -1,7 +1,7 @@
 "use client";
 
 import { getDictionary } from "@/get-dictionary";
-import { cn, isEnglish } from "@/lib/utils";
+import { cn, isEnglish, randomNumber } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/use-mobile";
@@ -9,6 +9,7 @@ import { Icons } from "../icons";
 import { Button } from "../ui/button";
 import { i18n, Locale } from "@/i18n-config";
 import Link from "next/link";
+import { useStore } from "./store";
 
 const lisNavs = [
   {
@@ -18,8 +19,8 @@ const lisNavs = [
   },
   {
     id: 2,
-    name: "fields",
-    idSection: "fields",
+    name: "usecase",
+    idSection: "usecase",
   },
   {
     id: 3,
@@ -38,7 +39,7 @@ const lisNavs = [
   },
 ];
 
-const wait = () => new Promise((resolve) => setTimeout(resolve, 400));
+const wait = () => new Promise((resolve) => setTimeout(resolve, 300));
 const wait50 = () => new Promise((resolve) => setTimeout(resolve, 50));
 
 export default function HeaderSection({
@@ -83,6 +84,8 @@ function DesktopHeader({
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const setSectionId = useStore((state) => state.setSectionId);
+  const idSection = useStore((state) => state.idSection);
   const pathName = usePathname();
 
   useEffect(() => {
@@ -104,6 +107,8 @@ function DesktopHeader({
     return () => window.removeEventListener("scroll", controlNavbar);
   }, [lastScrollY]);
 
+  console.log("idSection", idSection);
+
   return (
     <header
       className={cn(
@@ -113,14 +118,31 @@ function DesktopHeader({
     >
       <div className="container mx-auto 2xl:px-[123px] xl:px-[60px]">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div
+            onClick={() => {
+              wait50().then(() => {
+                setSectionId("about" + "_" + randomNumber(4));
+              });
+            }}
+            className="cursor-pointer flex items-center gap-2"
+          >
             <Icons.ndaKeyLogo />
           </div>
-          <div className="h-14 px-4 py-1.5 rounded-full bg-[#E2F4FF] flex items-center justify-between gap-6">
+          <div className="h-14 px-4 rounded-full bg-[#E2F4FF] flex items-center justify-between gap-6">
             {lisNavs.map((nav) => (
-              <div key={nav.id} className="cursor-pointer">
+              <div
+                onClick={() => {
+                  wait50().then(() => {
+                    setSectionId(nav.idSection + "_" + randomNumber(4));
+                  });
+                }}
+                key={nav.id}
+                className={cn(
+                  "h-11 px-4 cursor-pointer flex justify-center items-center rounded-full",
+                  idSection.split("_")[0] === nav.idSection && "bg-white"
+                )}
+              >
                 <span className="text-[#194185] text-base font-medium tracking-[-0.6px]">
-                  {/* {nav?.name} */}
                   {headerTitle[nav.name as keyof typeof headerTitle]}
                 </span>
               </div>

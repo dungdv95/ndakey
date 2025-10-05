@@ -1,19 +1,22 @@
 import { getDictionary } from "@/get-dictionary";
 import { Button } from "../ui/button";
 import { Icons } from "../icons";
-import { cn } from "@/lib/utils";
+import { cn, inEnglish, pathLanguage } from "@/lib/utils";
 import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Pause, Play } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
+import { usePathname } from "next/navigation";
 
 export default function AboutSection({
   aboutLang,
 }: {
   aboutLang: Awaited<ReturnType<typeof getDictionary>>["about"];
 }) {
+  const pathName = usePathname();
+
   return (
-    <div className="flex flex-col">
+    <section id="about" className="flex flex-col">
       <div className="mt-[22px] mx-6 bg-about rounded-[24px] pt-[175px]">
         <div className="flex justify-center">
           <div className="flex flex-col">
@@ -42,7 +45,7 @@ export default function AboutSection({
                   </div>
                   <div className="flex flex-col items-start">
                     <span className="text-white text-[10px] font-medium">
-                      Tải từ
+                      {aboutLang.btn.apple}
                     </span>
                     <span className="text-[21px] font-medium tracking-[-1.502px] leading-5">
                       App Store
@@ -57,19 +60,19 @@ export default function AboutSection({
                   </div>
                   <div className="flex flex-col items-start">
                     <span className="text-white text-[10px] font-medium">
-                      Tải từ
+                      {aboutLang.btn.chPlay}
                     </span>
                     <span className="text-[21px] font-medium tracking-[-1.502px] leading-5">
-                      App Store
+                      Google Play
                     </span>
                   </div>
                 </div>
               </Button>
             </div>
             <div className="relative mt-5 flex justify-center">
-              <div className="max-w-[532px] max-h-[533px]">
+              <div className="relative z-20 max-w-[532px] max-h-[533px]">
                 <img
-                  src="/images/about-phone.png"
+                  src={`/images/${pathLanguage(pathName)}/about-phone.png`}
                   className="object-cover h-full w-full"
                   alt="not-found"
                 />
@@ -77,7 +80,7 @@ export default function AboutSection({
               <div className="absolute left-[-310px]">
                 <div className="max-w-[476px] max-h-[474px]">
                   <img
-                    src="/images/about-left.png"
+                    src={`/images/${pathLanguage(pathName)}/about-left.png`}
                     className="object-cover h-full w-full"
                     alt="not-found"
                   />
@@ -86,7 +89,7 @@ export default function AboutSection({
               <div className="absolute right-[-265px]">
                 <div className="max-w-[436px] max-h-[509px]">
                   <img
-                    src="/images/about-right.png"
+                    src={`/images/${pathLanguage(pathName)}/about-right.png`}
                     className="object-cover h-full w-full"
                     alt="not-found"
                   />
@@ -141,7 +144,7 @@ export default function AboutSection({
               </TooltipTrigger>
               <TooltipContent className="px-3 py-2">
                 <p className="text-white text-xs font-semibold leading-[18px]">
-                  1. Yêu cầu cấp phát Chứng chỉ số (VC).
+                  {aboutLang.active.diagramHoverT1}
                 </p>
               </TooltipContent>
             </Tooltip>
@@ -149,12 +152,14 @@ export default function AboutSection({
             <Tooltip>
               <TooltipTrigger asChild>
                 <div className="absolute top-[120px] left-[224px] w-[150px] flex justify-center">
-                  <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">{`Phát hành\nthông tin xác thực`}</span>
+                  <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">
+                    {aboutLang.active.diagramT1}
+                  </span>
                 </div>
               </TooltipTrigger>
               <TooltipContent className="px-3 py-2">
                 <p className="text-white text-xs font-semibold leading-[18px]">
-                  1. Yêu cầu cấp phát Chứng chỉ số (VC).
+                  {aboutLang.active.diagramHoverT1}
                 </p>
               </TooltipContent>
             </Tooltip>
@@ -162,27 +167,36 @@ export default function AboutSection({
             <Tooltip>
               <TooltipTrigger asChild>
                 <div className="absolute top-[134px] left-[98px] w-[150px] flex justify-center -rotate-40">
-                  <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">{`Phát hành\nthông tin xác thực`}</span>
+                  <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">
+                    {aboutLang.active.diagramT2}
+                  </span>
                 </div>
               </TooltipTrigger>
               <TooltipContent className="px-3 py-2" align="center" side="left">
                 <p className="text-white text-xs font-semibold leading-[18px]">
-                  3. Phát hành VC đã ký và lưu trữ tại thiết bị của người dùng
-                  thông qua ứng dụng NDAKey.
+                  {aboutLang.active.diagramHoverT2}
                 </p>
               </TooltipContent>
             </Tooltip>
 
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="absolute top-[150px] right-[145px] w-[150px] flex justify-center rotate-43">
-                  <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">{`Xác minh thông tin`}</span>
+                <div
+                  className={cn(
+                    "absolute  w-[160px] flex justify-center rotate-43",
+                    inEnglish(pathName)
+                      ? "top-[135px] right-[132px]"
+                      : "top-[150px] right-[145px]"
+                  )}
+                >
+                  <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">
+                    {aboutLang.active.diagramT3}
+                  </span>
                 </div>
               </TooltipTrigger>
               <TooltipContent className="px-3 py-2" align="center" side="right">
                 <p className="text-white text-xs font-semibold leading-[18px]">
-                  4. Lựa chọn dữ liệu và chia sẻ Bằng chứng số (VP) cho bên cần
-                  xác minh thông tin qua NDAKey.
+                  {aboutLang.active.diagramHoverT3}
                 </p>
               </TooltipContent>
             </Tooltip>
@@ -195,22 +209,29 @@ export default function AboutSection({
               </TooltipTrigger>
               <TooltipContent className="px-3 py-2" align="center" side="left">
                 <p className="text-white text-xs font-semibold leading-[18px]">
-                  2. Tạo DID và khóa công khai trên NDAChain, sau đó ký số lên
-                  VC.
+                  {aboutLang.active.diagramHoverT4}
                 </p>
               </TooltipContent>
             </Tooltip>
 
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="absolute top-[305px] left-[40px] w-[150px] flex justify-center">
-                  <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">{`Bên khởi tạo\nChứng chỉ số`}</span>
+                <div
+                  className={cn(
+                    "absolute top-[305px] left-[40px] w-[150px] flex justify-center",
+                    inEnglish(pathName)
+                      ? "top-[320px] left-[40px]"
+                      : "top-[305px] left-[40px]"
+                  )}
+                >
+                  <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">
+                    {aboutLang.active.diagramT4}
+                  </span>
                 </div>
               </TooltipTrigger>
               <TooltipContent className="px-3 py-2" align="center" side="left">
                 <p className="text-white text-xs font-semibold leading-[18px]">
-                  2. Tạo DID và khóa công khai trên NDAChain, sau đó ký số lên
-                  VC.
+                  {aboutLang.active.diagramHoverT4}
                 </p>
               </TooltipContent>
             </Tooltip>
@@ -223,37 +244,60 @@ export default function AboutSection({
               </TooltipTrigger>
               <TooltipContent className="px-3 py-2" align="center" side="right">
                 <p className="text-white text-xs font-semibold leading-[18px]">
-                  5. Truy xuất khóa công khai trên NDAChain để kiểm tra và xác
-                  thực dữ liệu.
+                  {aboutLang.active.diagramHoverT5}
                 </p>
               </TooltipContent>
             </Tooltip>
 
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="absolute top-[310px] right-[40px] w-[150px] flex justify-center">
-                  <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">{`Bên xác thực\nBằng chứng số`}</span>
+                <div
+                  className={cn(
+                    "absolute w-[150px] flex justify-center",
+                    inEnglish(pathName)
+                      ? "top-[320px] right-[40px]"
+                      : "top-[310px] right-[40px]"
+                  )}
+                >
+                  <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">
+                    {aboutLang.active.diagramT5}
+                  </span>
                 </div>
               </TooltipTrigger>
               <TooltipContent className="px-3 py-2" align="center" side="right">
                 <p className="text-white text-xs font-semibold leading-[18px]">
-                  5. Truy xuất khóa công khai trên NDAChain để kiểm tra và xác
-                  thực dữ liệu.
+                  {aboutLang.active.diagramHoverT5}
                 </p>
               </TooltipContent>
             </Tooltip>
 
             <div className="absolute top-[400px] left-[40px] w-[150px] flex justify-center">
-              <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">{`Gửi\nKhóa công khai`}</span>
+              <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">
+                {aboutLang.active.diagramT6}
+              </span>
             </div>
 
-            <div className="absolute top-[400px] right-[40px] w-[150px] flex justify-center">
-              <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">{`Truy xuất\nKhoá công khai`}</span>
+            <div className="absolute top-[400px] right-[40px] w-[170px] flex justify-center">
+              <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">
+                {aboutLang.active.diagramT7}
+              </span>
+            </div>
+
+            <div className="absolute top-[250px] left-[224px] w-[150px] flex justify-center">
+              <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">
+                {aboutLang.active.diagramT8}
+              </span>
+            </div>
+
+            <div className="absolute top-[290px] left-[224px] w-[180px] flex justify-center">
+              <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-sm leading-5">
+                {aboutLang.active.diagramT9}
+              </span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -298,9 +342,7 @@ function VideoCustom({
     >
       <div className="z-10 relative w-full overflow-hidden rounded-[24px]">
         <video
-          poster={
-            "https://s3-sgn10.fptcloud.com/cdn/ndatrace/poster_video_introduce.png"
-          }
+          poster={"/images/video-thumb.png"}
           onEnded={handleEndVideo}
           ref={videoRef}
           className="size-full"

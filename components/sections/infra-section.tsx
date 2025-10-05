@@ -1,16 +1,22 @@
 import { getDictionary } from "@/get-dictionary";
 import { Icons } from "../icons";
 import { useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn, inEnglish } from "@/lib/utils";
 import { Button } from "../ui/button";
+import { usePathname } from "next/navigation";
 
 export default function InfraSection({
   infraLang,
 }: {
   infraLang: Awaited<ReturnType<typeof getDictionary>>["infra"];
 }) {
+  const pathName = usePathname();
+
   return (
-    <div className="container mx-auto 2xl:px-[123px] xl:px-[60px] max-xl:mt-[54px]">
+    <section
+      id="infra"
+      className="container mx-auto 2xl:px-[123px] xl:px-[60px] max-xl:mt-[54px]"
+    >
       <div className=" pt-7 pb-10 flex justify-center items-center">
         <div className="relative max-h-[774px] max-w-[774px]">
           <img
@@ -26,49 +32,76 @@ export default function InfraSection({
               {infraLang?.title.split("-")[1]}
             </span>
           </div>
-          <div className="z-20 absolute top-[150px] right-[-260px]">
-            <div className="flex flex-col gap-6 items-end">
-              <div className="max-w-[503px] max-h-[160px]">
-                <img
-                  src="/images/infra-partner.png"
-                  className="object-cover h-full w-full"
-                  alt="not-found"
-                />
+          <div className="z-20 absolute top-[226px] right-[-260px]">
+            <div className="flex flex-col gap-[29px] items-end">
+              <div className="flex items-center gap-2">
+                <div className="w-[126px] border-t-2 border-[#2E90FA] border-dashed" />
+                <div className="p-6 w-[375px] rounded-[12px] bg-[#EAF8FF] border border-[#0074FF]">
+                  <div className="flex items-center justify-between">
+                    <Icons.infraChatIcon />
+                    <Icons.infraAirIcon />
+                    <Icons.infraCarIcon />
+                    <Icons.infraPlusIcon />
+                    <Icons.infraLandmarkIcon />
+                  </div>
+                </div>
               </div>
-              <div className="max-w-[444px] max-h-[107px]">
-                <img
-                  src="/images/infra-platform.png"
-                  className="object-cover h-full w-full"
-                  alt="not-found"
-                />
+              <div className="flex items-center gap-2">
+                <div className="w-[67px] border-t-2 border-[#2E90FA] border-dashed" />
+                <div className="p-6 w-[375px] rounded-[12px] bg-[#EAF8FF] border border-[#0074FF]">
+                  <div className="flex items-center justify-between">
+                    <Icons.infraDB1Icon />
+                    <Icons.infraDB2Icon />
+                    <Icons.infraDB3Icon />
+                    <Icons.infraDB4Icon />
+                    <Icons.infraDB5Icon />
+                  </div>
+                </div>
               </div>
-              <div className="mt-3 max-w-[444px] max-h-[117px]">
-                <img
-                  src="/images/infra-db.png"
-                  className="object-cover h-full w-full"
-                  alt="not-found"
-                />
+              <div className="mt-3 flex items-center gap-2">
+                <div className="w-[67px] border-t-2 border-[#2E90FA] border-dashed" />
+                <div className="p-6 w-[375px] rounded-[12px] bg-[#EAF8FF] border border-[#0074FF]">
+                  <div className="flex items-center justify-between">
+                    <Icons.infraDB6Icon />
+                    <Icons.infraDB6Icon />
+                    <Icons.infraDB6Icon />
+                    <Icons.infraDB6Icon />
+                    <Icons.infraDB6Icon />
+                    <Icons.infraDB6Icon />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div className="z-20 absolute top-[240px] left-[-220px]">
             <div className="flex flex-col gap-[60px]">
               <div className="flex items-center gap-2">
-                <span className="whitespace-pre-line text-[#002D87] text-xl font-medium leading-7">{`Ứng dụng quản lý\ndanh tính số`}</span>
-                <div className="w-[300px] border-t-2 border-[#2E90FA] border-dashed" />
+                <span className="whitespace-pre-line text-[#002D87] text-xl font-medium leading-7">
+                  {infraLang.text1}
+                </span>
+                <div
+                  className={cn(
+                    "border-t-2 border-[#2E90FA] border-dashed",
+                    inEnglish(pathName) ? "w-[290px]" : "w-[300px]"
+                  )}
+                />
               </div>
               <div className="flex items-center gap-2">
-                <span className="whitespace-pre-line text-[#002D87] text-xl font-medium leading-7">{`Nền tảng Định danh phi tập trung\nquốc gia`}</span>
+                <span className="whitespace-pre-line text-[#002D87] text-xl font-medium leading-7">
+                  {infraLang.text2}
+                </span>
                 <div className="w-[110px] border-t-2 border-[#2E90FA] border-dashed" />
               </div>
               <div className="mt-3 flex items-center gap-2">
-                <span className="whitespace-pre-line text-[#002D87] text-xl font-medium leading-7">{`Nền tảng Blockchain\nquốc gia`}</span>
+                <span className="whitespace-pre-line text-[#002D87] text-xl font-medium leading-7">
+                  {infraLang.text3}
+                </span>
                 <div className="w-[220px] border-t-2 border-[#2E90FA] border-dashed" />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

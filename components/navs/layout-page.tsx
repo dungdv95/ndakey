@@ -3,6 +3,7 @@ import { getDictionary } from "@/get-dictionary";
 import HeaderSection from "./header-section";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/use-mobile";
+import { useStore } from "./store";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -15,6 +16,7 @@ export default function LayoutPage({ children, dictionary }: LayoutProps) {
   const [isScrolledToTop, setIsScrolledToTop] = useState(true);
   const [isScrolledToTopDesktop, setIsScrolledToTopDesktop] = useState(true);
   const isMobile = useIsMobile();
+  const idSection = useStore((state) => state.idSection);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +38,35 @@ export default function LayoutPage({ children, dictionary }: LayoutProps) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isMobile]);
+
+  useEffect(() => {
+    let sectionId = idSection.split("_")[0];
+    if (isMobile) {
+      wait().then(() => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+          const offset = 105; // số px muốn dịch xuống thêm
+          const targetY = rect.top + scrollTop - offset;
+          window.scrollTo({ top: targetY, behavior: "smooth" });
+        }
+      });
+    } else {
+      wait().then(() => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+          const offset = 10; // số px muốn dịch xuống thêm
+          const targetY = rect.top + scrollTop - offset;
+          window.scrollTo({ top: targetY, behavior: "smooth" });
+        }
+      });
+    }
+  }, [idSection, isMobile]);
 
   return (
     <div className="min-h-screen bg-white overflow-hidden font-display selection:bg-blue-300">
