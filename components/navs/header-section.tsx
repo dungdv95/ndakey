@@ -1,7 +1,7 @@
 "use client";
 
 import { getDictionary } from "@/get-dictionary";
-import { cn, isEnglish, randomNumber } from "@/lib/utils";
+import { cn, getTitleCategory, isEnglish, randomNumber } from "@/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/use-mobile";
@@ -10,6 +10,16 @@ import { Button } from "../ui/button";
 import { i18n, Locale } from "@/i18n-config";
 import Link from "next/link";
 import { useStore } from "./store";
+import { motion } from "motion/react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../ui/sheet";
+import { ChevronRight, X } from "lucide-react";
 
 const lisNavs = [
   {
@@ -53,15 +63,15 @@ export default function HeaderSection({
 }) {
   const isMobile = useIsMobile();
 
-  //   if (isMobile) {
-  //     return (
-  //       <MobileHeader
-  //         headerTitle={dictionary?.header}
-  //         isScrolledToTop={isScrolledToTop}
-  //         // blogListLang={dictionary?.blogList}
-  //       />
-  //     );
-  //   }
+  if (isMobile) {
+    return (
+      <MobileHeader
+        headerTitle={dictionary?.header}
+        isScrolledToTop={isScrolledToTop}
+        // blogListLang={dictionary?.blogList}
+      />
+    );
+  }
 
   return (
     <DesktopHeader
@@ -158,250 +168,250 @@ function DesktopHeader({
   );
 }
 
-// function MobileHeader({
-//   isScrolledToTop,
-//   headerTitle,
-//   blogListLang,
-// }: {
-//   isScrolledToTop: boolean;
-//   headerTitle: Awaited<ReturnType<typeof getDictionary>>["header"];
-//   blogListLang: Awaited<ReturnType<typeof getDictionary>>["blogList"];
-// }) {
-//   const listCategory = useStore((state) => state.listCategory);
-//   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-//   const [isVisible, setIsVisible] = useState(true);
-//   const [lastScrollY, setLastScrollY] = useState(0);
-//   const setSectionId = useStore((state) => state.setSectionId);
-//   const idSection = useStore((state) => state.idSection);
-//   const pathName = usePathname();
-//   const router = useRouter();
-//   const [openNews, setOpenNews] = useState(false);
+function MobileHeader({
+  isScrolledToTop,
+  headerTitle,
+}: // blogListLang,
+{
+  isScrolledToTop: boolean;
+  headerTitle: Awaited<ReturnType<typeof getDictionary>>["header"];
+  // blogListLang: Awaited<ReturnType<typeof getDictionary>>["blogList"];
+}) {
+  const listCategory = useStore((state) => state.listCategory);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const setSectionId = useStore((state) => state.setSectionId);
+  const idSection = useStore((state) => state.idSection);
+  const pathName = usePathname();
+  const router = useRouter();
+  const [openNews, setOpenNews] = useState(false);
 
-//   useEffect(() => {
-//     const controlNavbar = () => {
-//       const currentScrollY = window.scrollY;
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
 
-//       if (currentScrollY < lastScrollY || currentScrollY < 10) {
-//         // Scrolling up or at the top
-//         setIsVisible(true);
-//       } else {
-//         // Scrolling down
-//         setIsVisible(false);
-//       }
+      if (currentScrollY < lastScrollY || currentScrollY < 10) {
+        // Scrolling up or at the top
+        setIsVisible(true);
+      } else {
+        // Scrolling down
+        setIsVisible(false);
+      }
 
-//       setLastScrollY(currentScrollY);
-//     };
+      setLastScrollY(currentScrollY);
+    };
 
-//     window.addEventListener("scroll", controlNavbar);
-//     return () => window.removeEventListener("scroll", controlNavbar);
-//   }, [lastScrollY]);
+    window.addEventListener("scroll", controlNavbar);
+    return () => window.removeEventListener("scroll", controlNavbar);
+  }, [lastScrollY]);
 
-//   return (
-//     <header
-//       className={cn(
-//         "fixed top-0 left-0 right-0 z-50 w-full transition-transform duration-700 ease-in-out",
-//         isVisible ? "translate-y-0" : "-translate-y-full"
-//       )}
-//     >
-//       <motion.div
-//         viewport={{ once: true }}
-//         initial={{ opacity: 0, y: -40 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         transition={{
-//           duration: 1.1,
-//         }}
-//         className={cn(
-//           "py-6 px-4 max-[32rem]:py-4",
-//           isScrolledToTop ? "bg-transparent" : "bg-white/90 shadow-sm"
-//         )}
-//       >
-//         <div className="flex justify-between items-center">
-//           <div
-//             onClick={() => {
-//               if (inBlogPage(pathName)) {
-//                 router.push(`/${getEng(pathName)}`);
+  return (
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 w-full transition-transform duration-700 ease-in-out",
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      )}
+    >
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 1.1,
+        }}
+        className={cn(
+          "py-6 px-4 max-[32rem]:py-4",
+          isScrolledToTop ? "bg-transparent" : "bg-white/90 shadow-sm"
+        )}
+      >
+        <div className="flex justify-between items-center">
+          <div
+            // onClick={() => {
+            //   if (inBlogPage(pathName)) {
+            //     router.push(`/${getEng(pathName)}`);
 
-//                 wait().then(() => {
-//                   setSectionId("about" + "_" + randomNumber(4));
-//                 });
-//               } else {
-//                 wait50().then(() => {
-//                   setSectionId("about" + "_" + randomNumber(4));
-//                 });
-//               }
-//             }}
-//             className="flex items-center gap-2"
-//           >
-//             <div>
-//               <Icons.mobileLogoIcon />
-//             </div>
-//           </div>
-//           <Sheet
-//             open={mobileMenuOpen}
-//             onOpenChange={setMobileMenuOpen}
-//             // modal={true}
-//           >
-//             <SheetTrigger asChild>
-//               <Button
-//                 variant="default"
-//                 size="icon"
-//                 className="bg-white h-10 w-10 rounded-full"
-//               >
-//                 <Icons.mobileListMenuIcon className="size-6" />
-//               </Button>
-//             </SheetTrigger>
-//             <SheetContent
-//               onOpenAutoFocus={(e) => e.preventDefault()}
-//               className="border-0 mb-bg-menu rounded-l-2xl"
-//             >
-//               <SheetHeader className="hidden space-y-0">
-//                 <SheetTitle></SheetTitle>
-//                 <SheetDescription></SheetDescription>
-//               </SheetHeader>
-//               <div className="h-full flex flex-col">
-//                 <div className="overflow-y-auto px-4 flex-auto pt-[27px] z-10 relative flex flex-col gap-4">
-//                   <div className="px-4 flex justify-end">
-//                     <Button
-//                       className="h-10 w-10 bg-white hover:bg-white shadow-xl rounded-full"
-//                       size="icon"
-//                       onClick={() => {
-//                         setMobileMenuOpen(false);
-//                       }}
-//                     >
-//                       <X className="size-6 text-black stroke-2" />
-//                     </Button>
-//                   </div>
+            //     wait().then(() => {
+            //       setSectionId("about" + "_" + randomNumber(4));
+            //     });
+            //   } else {
+            //     wait50().then(() => {
+            //       setSectionId("about" + "_" + randomNumber(4));
+            //     });
+            //   }
+            // }}
+            className="flex items-center gap-2"
+          >
+            <div>
+              <Icons.ndaKeyLogo className="w-[143px] h-[32px]" />
+            </div>
+          </div>
+          <Sheet
+            open={mobileMenuOpen}
+            onOpenChange={setMobileMenuOpen}
+            // modal={true}
+          >
+            <SheetTrigger asChild>
+              <Button
+                variant="default"
+                size="icon"
+                className="bg-white h-10 w-10 rounded-full"
+              >
+                <Icons.mobileListMenuIcon className="size-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent
+              onOpenAutoFocus={(e) => e.preventDefault()}
+              className="border-0 mb-menu-bg"
+            >
+              <SheetHeader className="hidden space-y-0">
+                <SheetTitle></SheetTitle>
+                <SheetDescription></SheetDescription>
+              </SheetHeader>
+              <div className="h-full flex flex-col">
+                <div className="overflow-y-auto px-4 flex-auto pt-[27px] z-10 relative flex flex-col gap-4">
+                  <div className="px-4 flex justify-end">
+                    <Button
+                      className="h-10 w-10 bg-white hover:bg-white shadow-xl rounded-full"
+                      size="icon"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      <X className="size-6 text-black stroke-2" />
+                    </Button>
+                  </div>
 
-//                   <div className="flex-auto flex flex-col gap-6">
-//                     {lisNavs.map((item, index) => {
-//                       if (item.name === "blog") {
-//                         return (
-//                           <div key={index} className="flex flex-col gap-1">
-//                             <div
-//                               onClick={() => {
-//                                 setOpenNews(!openNews);
-//                               }}
-//                               className="flex items-center gap-2"
-//                             >
-//                               <span
-//                                 className={cn(
-//                                   "text-[#1849A9] text-xl leading-[30px] ",
-//                                   getColorActiveMobile(
-//                                     idSection.split("_")[0],
-//                                     pathName,
-//                                     item.idSection
-//                                   )
-//                                 )}
-//                               >
-//                                 {
-//                                   headerTitle[
-//                                     item.name as keyof typeof headerTitle
-//                                   ]
-//                                 }
-//                               </span>
-//                               <ChevronRight
-//                                 className={cn(
-//                                   "size-4 text-[#194185] hover:text-[#194185]/70",
-//                                   openNews && "rotate-90"
-//                                 )}
-//                               />
-//                             </div>
-//                             {openNews && (
-//                               <div className="px-4 flex flex-col gap-1">
-//                                 <span
-//                                   className={cn(
-//                                     "text-[#1849A9] text-xl leading-[30px] ",
-//                                     pathName.includes(`/all`) && "font-bold"
-//                                   )}
-//                                   onClick={() => {
-//                                     setMobileMenuOpen(false);
-//                                     router.push(
-//                                       `/${getEng(pathName)}/blogs/all`
-//                                     );
-//                                   }}
-//                                 >
-//                                   {blogListLang.all}
-//                                 </span>
-//                                 {listCategory.map((category, indexCategory) => (
-//                                   <span
-//                                     key={`category_${indexCategory}`}
-//                                     className={cn(
-//                                       "text-[#1849A9] text-xl leading-[30px] ",
-//                                       pathName.includes(`/${category.id}`) &&
-//                                         "font-bold"
-//                                     )}
-//                                     onClick={() => {
-//                                       setMobileMenuOpen(false);
-//                                       router.push(
-//                                         `/${getEng(pathName)}/blogs/${
-//                                           category.id
-//                                         }`
-//                                       );
-//                                     }}
-//                                   >
-//                                     {getTitleCategory(category.id, pathName)}
-//                                   </span>
-//                                 ))}
-//                               </div>
-//                             )}
-//                           </div>
-//                         );
-//                       }
-//                       return (
-//                         <span
-//                           key={index}
-//                           className={cn(
-//                             "text-[#1849A9] text-xl leading-[30px] ",
-//                             getColorActiveMobile(
-//                               idSection.split("_")[0],
-//                               pathName,
-//                               item.idSection
-//                             )
-//                           )}
-//                           onClick={() => {
-//                             setMobileMenuOpen(false);
-//                             if (item.name === "blog") {
-//                               router.push(`/${getEng(pathName)}/blogs/all`);
-//                             } else {
-//                               if (inBlogPage(pathName)) {
-//                                 if (item.name !== "contact") {
-//                                   router.push(`/${getEng(pathName)}`);
-//                                 }
-//                                 wait().then(() => {
-//                                   setSectionId(
-//                                     item.idSection + "_" + randomNumber(4)
-//                                   );
-//                                 });
-//                               } else {
-//                                 wait50().then(() => {
-//                                   setSectionId(
-//                                     item.idSection + "_" + randomNumber(4)
-//                                   );
-//                                 });
-//                               }
-//                             }
-//                           }}
-//                         >
-//                           {headerTitle[item.name as keyof typeof headerTitle]}
-//                         </span>
-//                       );
-//                     })}
-//                     <LocalSwitchMobile />
-//                   </div>
-//                 </div>
-//                 <div className="z-0 relative mb-[30px] flex justify-center">
-//                   <div className="absolute bottom-[-20px] left-0">
-//                     <Icons.mobileMenuStack className="w-full h-[220px] object-contain" />
-//                   </div>
-//                 </div>
-//               </div>
-//             </SheetContent>
-//           </Sheet>
-//         </div>
-//       </motion.div>
-//     </header>
-//   );
-// }
+                  <div className="flex-auto flex flex-col gap-6">
+                    {lisNavs.map((item, index) => {
+                      if (item.name === "blog") {
+                        return (
+                          <div key={index} className="flex flex-col gap-1">
+                            <div
+                              onClick={() => {
+                                setOpenNews(!openNews);
+                              }}
+                              className="flex items-center gap-2"
+                            >
+                              <span
+                                className={cn(
+                                  "text-[#1849A9] text-xl leading-[30px] "
+                                  // getColorActiveMobile(
+                                  //   idSection.split("_")[0],
+                                  //   pathName,
+                                  //   item.idSection
+                                  // )
+                                )}
+                              >
+                                {
+                                  headerTitle[
+                                    item.name as keyof typeof headerTitle
+                                  ]
+                                }
+                              </span>
+                              <ChevronRight
+                                className={cn(
+                                  "size-4 text-[#194185] hover:text-[#194185]/70",
+                                  openNews && "rotate-90"
+                                )}
+                              />
+                            </div>
+                            {openNews && (
+                              <div className="px-4 flex flex-col gap-1">
+                                <span
+                                  className={cn(
+                                    "text-[#1849A9] text-xl leading-[30px] ",
+                                    pathName.includes(`/all`) && "font-bold"
+                                  )}
+                                  // onClick={() => {
+                                  //   setMobileMenuOpen(false);
+                                  //   router.push(
+                                  //     `/${getEng(pathName)}/blogs/all`
+                                  //   );
+                                  // }}
+                                >
+                                  All
+                                </span>
+                                {listCategory.map((category, indexCategory) => (
+                                  <span
+                                    key={`category_${indexCategory}`}
+                                    className={cn(
+                                      "text-[#1849A9] text-xl leading-[30px] ",
+                                      pathName.includes(`/${category.id}`) &&
+                                        "font-bold"
+                                    )}
+                                    // onClick={() => {
+                                    //   setMobileMenuOpen(false);
+                                    //   router.push(
+                                    //     `/${getEng(pathName)}/blogs/${
+                                    //       category.id
+                                    //     }`
+                                    //   );
+                                    // }}
+                                  >
+                                    {getTitleCategory(category.id, pathName)}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      }
+                      return (
+                        <span
+                          key={index}
+                          className={cn(
+                            "text-[#1849A9] text-xl leading-[30px] "
+                            // getColorActiveMobile(
+                            //   idSection.split("_")[0],
+                            //   pathName,
+                            //   item.idSection
+                            // )
+                          )}
+                          // onClick={() => {
+                          //   setMobileMenuOpen(false);
+                          //   if (item.name === "blog") {
+                          //     router.push(`/${getEng(pathName)}/blogs/all`);
+                          //   } else {
+                          //     if (inBlogPage(pathName)) {
+                          //       if (item.name !== "contact") {
+                          //         router.push(`/${getEng(pathName)}`);
+                          //       }
+                          //       wait().then(() => {
+                          //         setSectionId(
+                          //           item.idSection + "_" + randomNumber(4)
+                          //         );
+                          //       });
+                          //     } else {
+                          //       wait50().then(() => {
+                          //         setSectionId(
+                          //           item.idSection + "_" + randomNumber(4)
+                          //         );
+                          //       });
+                          //     }
+                          //   }
+                          // }}
+                        >
+                          {headerTitle[item.name as keyof typeof headerTitle]}
+                        </span>
+                      );
+                    })}
+                    {/* <LocalSwitchMobile /> */}
+                  </div>
+                </div>
+                <div className="z-0 relative mb-[30px] flex justify-center">
+                  <div className="absolute bottom-[-100] right-[-300px]">
+                    <Icons.mobileMenuPoly />
+                  </div>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </motion.div>
+    </header>
+  );
+}
 
 // function LocalSwitch() {
 //   const pathname = usePathname();

@@ -52,7 +52,7 @@
     "travel": "Tourism"
   },
   "infra": {
-    "title": "Secure and Reliable Operation-on Vietnam's National Platform",
+    "title": "Secure and Reliable Operation on-Vietnam's National Platform",
     "text1": "Decentralized\nIdentity Application",
     "text2": "Vietnam's National Decentralized\nIdentity Platform",
     "text3": "Vietnam's National\nBlockchain Platform"
@@ -76,7 +76,7 @@
       "description": "Verification of information accuracy without disclosing original data (ZKP)."
     },
     "blockFive": {
-      "title": "Secure Authentication, Unlocking Digital Trust",
+      "title": "Secure Authentication,\nUnlocking Digital Trust",
       "description": "NDAKey delivers secure digital identity authentication solutions, supporting multiple industries. With easy SDK integration, organizations can reduce costs, protect businesses, and enhance customer trust.",
       "btnText": "Get Started"
     }

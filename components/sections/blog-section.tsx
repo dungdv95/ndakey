@@ -440,7 +440,7 @@ function MoblieBlog({
   // console.log("data", data);
   const [qaValue, setQaValue] = useState("ndaTrace");
   return (
-    <section id="news" className="px-4 pt-[50px] flex flex-col gap-[62px]">
+    <section id="news" className="px-4 pt-[108px] flex flex-col gap-[62px]">
       <div className="flex flex-col gap-6 items-center">
         <motion.span
           viewport={{ once: true }}
@@ -598,7 +598,7 @@ function MoblieBlog({
           transition={{
             duration: 1.1,
           }}
-          className="text-[#0057D6] text-xl leading-[30px] font-semibold"
+          className="text-[#0057D6] text-[30px] leading-[38px] font-semibold"
         >
           {blogLang.question}
         </motion.span>

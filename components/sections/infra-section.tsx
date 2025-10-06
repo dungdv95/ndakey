@@ -4,14 +4,74 @@ import { useState } from "react";
 import { cn, inEnglish } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { usePathname } from "next/navigation";
+import { useIsMobile } from "../hooks/use-mobile";
 
 export default function InfraSection({
   infraLang,
 }: {
   infraLang: Awaited<ReturnType<typeof getDictionary>>["infra"];
 }) {
-  const pathName = usePathname();
+  const isMobile = useIsMobile();
 
+  if (isMobile) {
+    return <MobileView infraLang={infraLang} />;
+  }
+
+  return <DesktopView infraLang={infraLang} />;
+}
+
+function MobileView({
+  infraLang,
+}: {
+  infraLang: Awaited<ReturnType<typeof getDictionary>>["infra"];
+}) {
+  const pathName = usePathname();
+  return (
+    <section id="infra" className="pt-[50px] pb-6">
+      <div className="relative flex justify-center min-h-[886px]">
+        <div className="z-10 absolute top-0">
+          <div className="w-[886px] h-[886px]">
+            <img
+              src="/images/infra-bg.png"
+              className="object-cover h-full w-full"
+              alt="not-found"
+            />
+          </div>
+        </div>
+        <div className="relative z-20 flex flex-col items-center">
+          <span className="px-4 whitespace-pre-line text-center text-[#0057D6] text-[30px] font-semibold leading-[38px]">
+            {infraLang?.title.split("-")[0]}
+          </span>
+          <span className="px-4 text-field-color text-center text-[#0057D6] text-[30px] font-semibold leading-[38px]">
+            {infraLang?.title.split("-")[1]}
+          </span>
+          <div className="absolute top-[322px] w-full flex justify-center">
+            <span className="text-center text-[#194185] text-lg leading-7 font-semibold">
+              {infraLang.text1}
+            </span>
+          </div>
+          <div className="absolute top-[520px] w-full flex justify-center">
+            <span className="whitespace-pre-line text-center text-[#194185] text-lg leading-7 font-semibold">
+              {infraLang.text2}
+            </span>
+          </div>
+          <div className="absolute top-[780px] w-full flex justify-center">
+            <span className="text-center text-[#194185] text-lg leading-7 font-semibold">
+              {infraLang.text3}
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DesktopView({
+  infraLang,
+}: {
+  infraLang: Awaited<ReturnType<typeof getDictionary>>["infra"];
+}) {
+  const pathName = usePathname();
   return (
     <section
       id="infra"

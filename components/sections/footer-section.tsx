@@ -2,8 +2,139 @@ import { getDictionary } from "@/get-dictionary";
 import { Separator } from "../ui/separator";
 import { Icons } from "../icons";
 import { Button } from "../ui/button";
+import { useIsMobile } from "../hooks/use-mobile";
 
 export default function FooterSection({
+  footerLang,
+}: {
+  footerLang: Awaited<ReturnType<typeof getDictionary>>["footer"];
+}) {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return <MobileView footerLang={footerLang} />;
+  }
+
+  return <DesktopView footerLang={footerLang} />;
+}
+
+function MobileView({
+  footerLang,
+}: {
+  footerLang: Awaited<ReturnType<typeof getDictionary>>["footer"];
+}) {
+  return (
+    <section id="footer" className="pt-[30px]">
+      <div className="bg-footer flex flex-col">
+        <div className="px-4 pt-[68px] pb-11 flex flex-col gap-6">
+          <div>
+            <Icons.ndaKeyLogo className="w-[332px] h-[74px]" />
+          </div>
+          <Separator className="m-0 bg-[#D5E9E6]" />
+          <div className="flex flex-col gap-1">
+            <span className="text-[#194185] text-xl font-semibold leading-[30px]">
+              {footerLang.leftText.text1}
+            </span>
+            <span className="text-[#194185] text-xl font-semibold leading-[30px]">
+              {footerLang.leftText.text2}
+            </span>
+          </div>
+          <span className="text-[#194185] text-lg leading-7">
+            {footerLang.leftText.description1}
+          </span>
+
+          <div className="flex flex-col gap-4">
+            <span className="text-[#194185] text-lg leading-7">
+              {footerLang.leftText.description2}
+            </span>
+            <div className="flex gap-4 items-center">
+              <Button className="h-12 w-[160px] rounded-[8px] justify-start py-1.5">
+                <div className="flex gap-2 items-center">
+                  <div>
+                    <Icons.appleIcon className="!w-[21px] !h-[26px]" />
+                  </div>
+                  <div className="flex flex-col items-start">
+                    <span className="text-white text-[10px] font-medium">
+                      {footerLang.btn.apple}
+                    </span>
+                    <span className="text-[21px] font-medium tracking-[-1.502px] leading-5">
+                      App Store
+                    </span>
+                  </div>
+                </div>
+              </Button>
+              <Button className="h-12 w-[160px] rounded-[8px] justify-start py-1.5">
+                <div className="flex gap-2 items-center">
+                  <div>
+                    <Icons.chPlayIcon className="!w-[26px] !h-[28px]" />
+                  </div>
+                  <div className="flex flex-col items-start">
+                    <span className="text-white text-[10px] font-medium">
+                      {footerLang.btn.chPlay}
+                    </span>
+                    <span className="text-[21px] font-medium tracking-[-1.502px] leading-5">
+                      Google Play
+                    </span>
+                  </div>
+                </div>
+              </Button>
+            </div>
+          </div>
+          <Separator className="m-0 bg-[#D5E9E6]" />
+          <div className="flex flex-col gap-[30px]">
+            <span className="text-[#194185] text-2xl font-semibold leading-8">
+              {footerLang.contact.title}
+            </span>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col">
+                <span className="text-[#194185] text-base font-semibold leading-6">
+                  E-mail
+                </span>
+                <span className="text-[#194185] text-base leading-6">
+                  info@ndakey.vn
+                </span>
+              </div>
+
+              <div className="flex flex-col">
+                <span className="text-[#194185] text-base font-semibold leading-6">
+                  {footerLang.contact.addrName}
+                </span>
+                <span className="text-[#194185] text-base leading-6">
+                  {footerLang.contact.addr}
+                </span>
+              </div>
+            </div>
+          </div>
+          <Separator className="m-0 bg-[#D5E9E6]" />
+          <div className="flex flex-col gap-[30px]">
+            <span className="text-[#194185] text-2xl font-semibold leading-8">
+              {footerLang.product.title}
+            </span>
+            <div className="flex flex-col gap-6">
+              <span className="text-[#194185] text-base leading-6">
+                NDAChain - {footerLang.product.ndaChain}
+              </span>
+              <span className="text-[#194185] text-base leading-6">
+                NDADID - {footerLang.product.ndaDid}
+              </span>
+              <span className="text-[#194185] text-base leading-6">
+                NDATrace - {footerLang.product.ndaTrace}
+              </span>
+            </div>
+          </div>
+        </div>
+        <Separator className="m-0 bg-[#D1E9FF]" />
+        <div className="py-4 flex justify-center items-center">
+          <span className="text-[#194185] text-base">
+            © 2025 Copyright by NDAKey
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function DesktopView({
   footerLang,
 }: {
   footerLang: Awaited<ReturnType<typeof getDictionary>>["footer"];

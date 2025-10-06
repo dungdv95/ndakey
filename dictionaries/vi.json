@@ -31,8 +31,8 @@
       "diagramT8": "Tin tưởng",
       "diagramT9": "Không cần tích hợp",
       "diagramHoverT1": "1. Yêu cầu cấp phát Chứng chỉ số (VC).",
-      "diagramHoverT2": "3. Phát hành VC đã ký và lưu trữ tại thiết bị của người dùng thông qua ứng dụng NDAKey.",
-      "diagramHoverT3": "4. Lựa chọn dữ liệu và chia sẻ Bằng chứng số (VP) cho bên cần xác minh thông tin qua NDAKey.",
+      "diagramHoverT2": "3. Phát hành VC đã ký và lưu trữ tại thiết bị của\nngười dùng thông qua ứng dụng NDAKey.",
+      "diagramHoverT3": "4. Lựa chọn dữ liệu và chia sẻ Bằng chứng số (VP)\ncho bên cần xác minh thông tin qua NDAKey.",
       "diagramHoverT4": "2. Tạo DID và khóa công khai trên NDAChain, sau đó ký số lên VC.",
       "diagramHoverT5": "5. Truy xuất khóa công khai trên NDAChain để kiểm tra và xác thực dữ liệu."
     },
@@ -52,7 +52,7 @@
     "travel": "Du lịch"
   },
   "infra": {
-    "title": "Vận hành an toàn và tin cậy trên-Nền tảng quốc gia",
+    "title": "Vận hành an toàn\nvà tin cậy trên-Nền tảng quốc gia",
     "text1": "Ứng dụng quản lý\ndanh tính số",
     "text2": "Nền tảng Định danh phi tập trung\nquốc gia",
     "text3": "Nền tảng Blockchain\nquốc gia"
@@ -76,7 +76,7 @@
       "description": "Xác minh tính chính xác của một thông tin mà không cần tiết lộ dữ liệu gốc."
     },
     "blockFive": {
-      "title": "Xác thực an toàn, Mở khoá niềm tin số",
+      "title": "Xác thực an toàn,\nMở khoá niềm tin số",
       "description": "NDAKey cung cấp giải pháp xác thực danh tính số an toàn, hỗ trợ đa ngành nghề. Tích hợp dễ dàng qua SDKs để tiết kiệm chi phí, bảo vệ doanh nghiệp và gia tăng niềm tin khách hàng.",
       "btnText": "Đăng ký tích hợp"
     }
@@ -101,7 +101,7 @@
       "text1": "Trao quyền dữ liệu cho Công dân",
       "text2": "Kiến tạo Niềm tin số",
       "description1": "Công dân có toàn quyền kiểm soát và chia sẻ dữ liệu an toàn, minh bạch; đồng thời kiến tạo nền tảng tin cậy cho Chính phủ số, Kinh tế số và Xã hội số.",
-      "description2": "Ứng dụng hiện có mặt trên nền tảng iOS và Android."
+      "description2": "Hiện có trên iOS và Android."
     },
     "navs": {
       "about": "Giới thiệu",

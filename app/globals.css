@@ -227,3 +227,18 @@ body {
 .bg-footer {
   background: linear-gradient(346deg, #fff 30.53%, #def5ff 81.82%);
 }
+.mb-menu-bg {
+  background: linear-gradient(120deg, #f6fcff 26.6%, #def5ff 78.59%);
+}
+
+.mb-bg-about {
+  background: linear-gradient(153deg, #f6fcff 32.31%, #def5ff 59.25%);
+}
+.mb-overlap-phone {
+  background: linear-gradient(#ffffff00 70%, #e6f8ff 100%);
+}
+
+.mb-bg-auth {
+  background: linear-gradient(0deg, #f6fcfc 0%, #f6fcfc 100%),
+    linear-gradient(217deg, rgba(199, 233, 255, 0.8) 21.29%, #fff 75.06%);
+}
