@@ -117,7 +117,7 @@ function MobileAbout({
         </span>
         <div className="w-full flex justify-center bg-[url(/images/bg-about-ndakey.png)] bg-center bg-cover">
           <div className="pb-[60px] relative">
-            <div className="max-w-[630px] max-h-[680px]">
+            <div className="w-[550px] h-[593px] max-[34rem]:w-[430px] max-[34rem]:h-[464px]">
               <img
                 src="/images/about-nda-key-active.png"
                 className="object-cover h-full w-full"
@@ -127,7 +127,7 @@ function MobileAbout({
 
             <Popover>
               <PopoverTrigger asChild>
-                <div className="absolute top-[25px] right-[178px]">
+                <div className="absolute top-[38px] right-[245px] max-[34rem]:top-[25px] max-[34rem]:right-[178px]">
                   <Icons.aboutActiveHead className="!w-[73px] !h-[50px]" />
                 </div>
               </PopoverTrigger>
@@ -137,7 +137,7 @@ function MobileAbout({
                 </p>
               </PopoverContent>
             </Popover>
-            <div className="absolute top-[83px] right-[175px] w-[100px] flex justify-center">
+            <div className="absolute top-[100px] right-[240px] max-[34rem]:top-[83px] max-[34rem]:right-[175px] w-[100px] flex justify-center">
               <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-[9px] leading-3">
                 {aboutLang.active.diagramT1}
               </span>
@@ -147,7 +147,7 @@ function MobileAbout({
               <PopoverTrigger asChild>
                 <div
                   className={cn(
-                    "absolute top-[90px] left-[75px] flex justify-center -rotate-40",
+                    "absolute top-[120px] left-[112px] max-[34rem]:top-[90px] max-[34rem]:left-[75px] flex justify-center -rotate-40",
                     inEnglish(pathName) ? "w-[100px]" : "w-[90px]"
                   )}
                 >
@@ -167,10 +167,10 @@ function MobileAbout({
               <PopoverTrigger asChild>
                 <div
                   className={cn(
-                    "absolute  flex justify-center  rotate-43",
+                    "absolute  flex justify-center rotate-43",
                     inEnglish(pathName)
-                      ? "w-[110px] top-[94px] right-[90px] "
-                      : "w-[90px] top-[103px] right-[105px] "
+                      ? "w-[110px] top-[127px] right-[133px] max-[34rem]:top-[94px] max-[34rem]:right-[90px]"
+                      : "w-[90px] top-[134px] right-[147px] max-[34rem]:top-[103px] max-[34rem]:right-[105px]"
                   )}
                 >
                   <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-[9px] leading-3">
@@ -187,7 +187,7 @@ function MobileAbout({
 
             <Popover>
               <PopoverTrigger asChild>
-                <div className="absolute top-[145px] left-[42px]">
+                <div className="absolute top-[188px] left-[70px] max-[34rem]:top-[145px] max-[34rem]:left-[42px]">
                   <Icons.aboutActiveLeft className="w-[67px] h-[60px]" />
                 </div>
               </PopoverTrigger>
@@ -200,8 +200,10 @@ function MobileAbout({
 
             <div
               className={cn(
-                "absolute left-[32px] w-[90px] flex justify-center",
-                inEnglish(pathName) ? "top-[218px]" : "top-[212px] "
+                "absolute w-[90px] flex justify-center",
+                inEnglish(pathName)
+                  ? "top-[273px] left-[55px] max-[34rem]:top-[218px] max-[34rem]:left-[32px]"
+                  : "top-[267px] left-[55px] max-[34rem]:top-[212px] max-[34rem]:left-[32px]"
               )}
             >
               <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-[9px] leading-3">
@@ -211,7 +213,7 @@ function MobileAbout({
 
             <Popover>
               <PopoverTrigger asChild>
-                <div className="absolute top-[145px] right-[55px]">
+                <div className="absolute top-[192px] right-[86px] max-[34rem]:top-[145px] max-[34rem]:right-[55px]">
                   <Icons.aboutActiveRight className="w-[53px] h-[61px]" />
                 </div>
               </PopoverTrigger>
@@ -224,8 +226,10 @@ function MobileAbout({
 
             <div
               className={cn(
-                "absolute right-[36px] w-[90px] flex justify-center",
-                inEnglish(pathName) ? "top-[218px]" : "top-[212px]"
+                "absolute w-[90px] flex justify-center",
+                inEnglish(pathName)
+                  ? "top-[273px] right-[65px] max-[34rem]:top-[218px] max-[34rem]:right-[36px]"
+                  : "top-[267px] right-[65px] max-[34rem]:top-[212px] max-[34rem]:right-[36px] "
               )}
             >
               <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-[9px] leading-3">
@@ -235,8 +239,10 @@ function MobileAbout({
 
             <div
               className={cn(
-                "absolute top-[273px] left-[32px] w-[90px] flex justify-center",
-                inEnglish(pathName) ? "w-[100px]" : "w-[90px]"
+                "absolute w-[90px] flex justify-center",
+                inEnglish(pathName)
+                  ? "w-[100px] top-[355px] left-[56px] max-[34rem]:top-[273px] max-[34rem]:left-[32px]"
+                  : "w-[90px] top-[355px] left-[56px] max-[34rem]:top-[273px] max-[34rem]:left-[32px] "
               )}
             >
               <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-[9px] leading-3">
@@ -246,8 +252,10 @@ function MobileAbout({
 
             <div
               className={cn(
-                "absolute top-[273px] right-[36px] flex justify-center",
-                inEnglish(pathName) ? "w-[105px]" : "w-[90px]"
+                "absolute  flex justify-center",
+                inEnglish(pathName)
+                  ? "w-[105px] top-[355px] right-[55px] max-[34rem]:top-[273px] max-[34rem]:right-[36px]"
+                  : "w-[90px] top-[355px] right-[65px] max-[34rem]:top-[273px] max-[34rem]:right-[36px]"
               )}
             >
               <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-[9px] leading-3">
@@ -255,7 +263,7 @@ function MobileAbout({
               </span>
             </div>
 
-            <div className="absolute top-[170px] right-[175px] w-[90px] flex justify-center">
+            <div className="absolute top-[220px] right-[235px] max-[34rem]:top-[170px] max-[34rem]:right-[175px] w-[90px] flex justify-center">
               <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-[9px] leading-3">
                 {aboutLang.active.diagramT8}
               </span>
@@ -263,10 +271,10 @@ function MobileAbout({
 
             <div
               className={cn(
-                "absolute top-[205px]  flex justify-center",
+                "absolute  flex justify-center",
                 inEnglish(pathName)
-                  ? "w-[105px] right-[170px]"
-                  : "w-[90px] right-[175px] "
+                  ? "w-[105px] right-[170px] top-[205px]"
+                  : "w-[90px] right-[235px] top-[260px] max-[34rem]:right-[175px] max-[34rem]:top-[205px]"
               )}
             >
               <span className="whitespace-pre-line text-center text-[#5E5E5E] font-semibold text-[9px] leading-3">

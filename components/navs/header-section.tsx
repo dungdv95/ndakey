@@ -284,7 +284,7 @@ function MobileHeader({
 
                   <div className="flex-auto flex flex-col gap-6">
                     {lisNavs.map((item, index) => {
-                      if (item.name === "blog") {
+                      if (item.name === "news") {
                         return (
                           <div key={index} className="flex flex-col gap-1">
                             <div
@@ -361,36 +361,23 @@ function MobileHeader({
                         <span
                           key={index}
                           className={cn(
-                            "text-[#1849A9] text-xl leading-[30px] "
+                            "text-[#1849A9] text-xl leading-[30px]",
+                            idSection.split("_")[0] === item.idSection &&
+                              "font-semibold"
                             // getColorActiveMobile(
                             //   idSection.split("_")[0],
                             //   pathName,
                             //   item.idSection
                             // )
                           )}
-                          // onClick={() => {
-                          //   setMobileMenuOpen(false);
-                          //   if (item.name === "blog") {
-                          //     router.push(`/${getEng(pathName)}/blogs/all`);
-                          //   } else {
-                          //     if (inBlogPage(pathName)) {
-                          //       if (item.name !== "contact") {
-                          //         router.push(`/${getEng(pathName)}`);
-                          //       }
-                          //       wait().then(() => {
-                          //         setSectionId(
-                          //           item.idSection + "_" + randomNumber(4)
-                          //         );
-                          //       });
-                          //     } else {
-                          //       wait50().then(() => {
-                          //         setSectionId(
-                          //           item.idSection + "_" + randomNumber(4)
-                          //         );
-                          //       });
-                          //     }
-                          //   }
-                          // }}
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                            wait50().then(() => {
+                              setSectionId(
+                                item.idSection + "_" + randomNumber(4)
+                              );
+                            });
+                          }}
                         >
                           {headerTitle[item.name as keyof typeof headerTitle]}
                         </span>

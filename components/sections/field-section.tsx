@@ -80,7 +80,7 @@ function MobileView({
               </div>
               <div
                 className={cn(
-                  "h-fit min-w-[140px] cursor-pointer px-5 py-3.5 rounded-full flex justify-center items-center",
+                  "h-fit min-w-[160px] cursor-pointer px-5 py-3.5 rounded-full flex justify-center items-center",
                   isActive === "business" ? "bg-[#0073ff]" : "bg-[#FAFAFA]"
                 )}
                 onClick={() => setIsActive("business")}

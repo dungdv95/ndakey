@@ -48,7 +48,7 @@ export default function LayoutPage({ children, dictionary }: LayoutProps) {
           const rect = el.getBoundingClientRect();
           const scrollTop =
             window.pageYOffset || document.documentElement.scrollTop;
-          const offset = 105; // số px muốn dịch xuống thêm
+          const offset = 40; // số px muốn dịch xuống thêm
           const targetY = rect.top + scrollTop - offset;
           window.scrollTo({ top: targetY, behavior: "smooth" });
         }
