@@ -125,5 +125,11 @@
       "apple": "Download on the",
       "chPlay": "Get it on"
     }
+  },
+  "blogList": {
+    "all": "All",
+    "technology": "Technology",
+    "news": "News",
+    "realted": "Related news"
   }
 }

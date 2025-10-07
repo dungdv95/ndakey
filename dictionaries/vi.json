@@ -125,5 +125,11 @@
       "apple": "Tải từ",
       "chPlay": "Tải từ"
     }
+  },
+  "blogList": {
+    "all": "Tất cả",
+    "technology": "Công nghệ",
+    "news": "Tin tức",
+    "realted": "Tin liên quan"
   }
 }
